@@ -77,3 +77,25 @@ ul, li{
 .menu-navegacion{
     
 }
+
+
+/*Footer*/
+
+.footer{
+    display: flex;
+    height: 12vh;
+}
+
+.lista-footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 95%;
+}
+
+.imgFooter{
+    justify-content: flex-end;
+    
+}
