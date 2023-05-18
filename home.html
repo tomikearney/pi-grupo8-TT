@@ -9,23 +9,27 @@
     <!--Para traer iconos de Font Awasome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <!--Link hoja CSS-->
-    <link rel="stylesheet" href="./css/stlye.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <!--Header-->
-    <header>
-        <section>
-            <img src="./img/logo.png" alt="logo" class="fotoLogo">
+    <header class="headerPadre">
+        <section class="contenedorlogo-buscador">
+            <article class="art-logo">
+                <img src="./img/logo.png" alt="logo" class="fotoLogo">
+            </article>
+
+            <article class="buscador">
+                <!--falta validacion del buscador-->
+                <form action="./searchResults.html" method="get" class="formHeader">
+                    <input type="search" id="search-input" name="busqueda" placeholder="Buscar...">
+                    <button class ="botonBusqueda" type="submit"><i class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                </form>
+            </article>
         </section>
 
-        <!--falta validacion del buscador-->
-        <form action="./searchResults.html" method="get" class="formHeader">
-            <input type="search" id="search-input" name="busqueda" placeholder="Buscar...">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
-        </form>
-
-        <nav class="menu-navegación">
+        <nav class="menu-navegacion">
             <ul class="ul-menu">
                 <li class="tab"> <a href="./home.html">Home</a></li>
                 <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
