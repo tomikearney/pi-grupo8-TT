@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
+    <!--Para traer iconos de Font Awasome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!--Link hoja CSS-->
     <link rel="stylesheet" href="./css/stlye.css">
 </head>
+
 <body>
     <!--Header-->
     <header>
-        
+        <section>
+            <img src="./img/logo.png" alt="logo" class="fotoLogo">
+        </section>
+
+        <!--terminar de definir el buscador-->
+        <form action="./searchResults.html" method="get" class="formHeader">
+            <input type="search" id="search-input" name="busqueda" placeholder="Buscar...">
+            <button type="submit"></button>
+        </form>
+
+        <nav class="menu-navegación">
+            <ul>
+                <li class="Home"></li>
+            </ul>
+        </nav>
     </header>
 
 
@@ -18,7 +37,8 @@
     <footer>
 
     </footer>
-   <!--Vincular con el javascript correspondiente--> 
-   <script type="text/javascript" src="./js/home.js"></script>
+    <!--Vincular con el javascript correspondiente-->
+    <script type="text/javascript" src="./js/home.js"></script>
 </body>
+
 </html>
