@@ -1,5 +1,5 @@
 function formulario() {
-    let buscador = document.querySelector('.buscador').value;
+    let buscador = document.querySelector('#search-input').value;
     if (buscador== "") {
         alert ("por favor ingrese un espacio");
         return false
