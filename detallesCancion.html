@@ -13,7 +13,52 @@
 </head>
 
 <body>
+     <!--Header-->
+     <header class="headerPadre">
+        <section class="headerSuperior">
+            <article class="logo">
+                <img src="./img/logo.png" alt="logo" class="fotoLogo">
+            </article>
+            <article class="buscador">
+                <!--falta validacion del buscador-->
+                <form action="./resultas-busquedad.html" method="get" class="formHeader" onsubmit="return formulario()">
+                    <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
+                    <button class="botonBusqueda" type="submit"><i
+                            class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                </form>
 
+            </article>
+        </section>
+
+        <section class="containerMenu">
+            <article class="articleMenu">
+                <nav>
+                    <ul class="navLista">
+                        <li class="tab"> <a href="./home.html">Home</a></li>
+                        <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
+                        <li class="tab"> <a href="./detallesDisco.html">Disco</a></li>
+                        <li class="tab"> <a href="./detallesCancion.html">Canciones</a></li>
+                        <li class="tab"> <a href="./generos.html">Genero</a></li>
+                        <li class="tab"> <a href="./detallesGeneros.html">Detalle de Genero</a></li>
+                        <li class="tab"> <a href="./playlist.html">Mi Playlist</a></li>
+                    </ul>
+                </nav>
+            </article>
+        </section>
+    </header>
+
+    <main>
+        
+    </main>
+    <!--Footer-->
+    <footer class="footer">
+        <ul class="lista-footer">
+            <li> Tomas Kearney </li>
+            <li> Francisco Javier del Terror</li>
+            <li> Oriana Cacsire</li>
+        </ul>
+        <img src="./img/logo.png" alt="" class="imgFooter">
+    </footer>
 
     <!--Vincular con el javascript correspondiente-->
     <script type="text/javascript" src="./js/detallesCancion.js"></script>

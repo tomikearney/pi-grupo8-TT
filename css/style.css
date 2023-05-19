@@ -1,6 +1,4 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
@@ -22,7 +20,6 @@ ul, li{
 }
 .headerPadre{ /*headerpadre tamaño del header total*/
     width: 100%;
-    position: fixed;
     margin-top: 0;
     margin-left: 0;
     background-color: aqua;
@@ -65,7 +62,7 @@ ul, li{
 
 /*logo*/
 .logo{
-    width: 30%;
+    width: 28%;
     height: 15vh;
     display: flex;
     flex-direction: row;
@@ -128,6 +125,7 @@ nav li a {
 .footer{
     display: flex;
     height: 12vh;
+    background-color: rgba(169, 194, 169, 0.378);
 }
 
 .lista-footer{
@@ -135,11 +133,10 @@ nav li a {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    height: 12vh;
     width: 95%;
 }
 
 .imgFooter{
     justify-content: flex-end;
-    
 }
