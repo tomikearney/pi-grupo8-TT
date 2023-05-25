@@ -4,11 +4,15 @@
 }
 
 body{
+    /*background-image: url(../img/fondo.jpeg);*/
     margin: 0;
+    border: 0;
     padding: 0;
-    background-color: green;
-    color: white;
+    width: 100%;
+    /* background-color: blawck;
+    color: white; */
 }
+
 a{
     text-decoration: none;
 }
@@ -18,16 +22,16 @@ ul, li{
     padding: 0;
     font-size: 13px;
 }
-.headerPadre{ /*headerpadre tamaño del header total*/
-    width: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    background-color: aqua;
+
+/*headerSeccionLogo*/
+.header{
+  width: 100%;
+  height: 25vh;
+  background-color: blue;
 }
-/*Header Superior*/
- .headerSuperior{
+
+.headerSeccionPrimeraParte{
     height: 15vh;
-    background-color: blue;
     box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
     display: flex;
     flex-direction: row;
@@ -35,8 +39,29 @@ ul, li{
     align-items: center;
     justify-content: space-between;
     padding: 0px 63px 0px 44px;
+    background-color: rgb(0, 61, 123);
 }
-.buscador{
+.headerArticleLogo{
+    width: 25%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: green; */
+}
+
+.headerImgLogo{
+    width: 100px;
+    height: 15vh;
+    padding: 2px;
+
+}
+
+/*headerSeccionForm*/
+
+.headerArticleForm{
     width: 50%; /*50% de su contenedor*/
     display: flex;
     flex-direction: row;
@@ -44,45 +69,38 @@ ul, li{
     justify-content: center;
     align-items: flex-end;
 }
-.formHeader{
-    width: 100%; /*el 100% del 50%*/
+
+#buscadorForm{
+    width: 90%; /*el 100% del 50%*/
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
-#searchInput{
-    width: 100%;
+#searchInput {
+    width: 500px;
+    height: 30px;
+    margin-right: 5px;
+    background-color: white;
+}
+#botonBusqueda{
     padding: 10px;
+    width: 40px;
+    height: 34px;
+    border-radius: 5px;
+
 }
 
-.botonBusqueda{
-    width: 15%;
-    padding: 10px;
-}
-
-/*logo*/
-.logo{
-    width: 28%;
-    height: 15vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.fotoLogo{
-    width: 36%;
-    height: 15vh;
-}
-
-/*BARRA MENU*/
-.containerMenu{
+/*headerSeccionNav*/
+.headerSeccionNav{
+    border-top: solid 1px gray;
     width: 100%;
     height: 10vh;
-    background-color: darkblue;
-    padding: 0px 20px; /*para que haigan espacios entre las cajas*/
+    background-color: rgb(0, 61, 123);
+    padding: 0px 20px; 
 }
-.articleMenu{
+
+.headerNavUl{
     width: 100%;
     height: 10vh;
     display: flex;
@@ -91,52 +109,49 @@ ul, li{
     justify-content: space-evenly;
     align-items: center;
 }
-nav{
-    width: 100%;
-}
-.navLista {
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+
+.headerNavBoton{
+    font-size: 25px;
+    background-color: rgb(102, 134, 208);
+    border-radius: 5px;
+    padding: 2px;
+    box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
 }
 
-.tab{
-    width: 14%;
-    height: 6vh;
-    margin: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
-}
-nav li a {
-   padding: 5px;
-   color: black;
-   text-transform: uppercase;
-   font-size: 14px;
+.headerNavBoton a{
+    color: #fff;
 }
 
-
-/*Footer*/
-
+/*footerSeccionNav*/
 .footer{
     display: flex;
-    height: 12vh;
-    background-color: rgba(169, 194, 169, 0.378);
+    height: 16vh;
+    background-color: rgb(0, 61, 123);
 }
 
-.lista-footer{
+.footerSeccionNav{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 12vh;
-    width: 95%;
+    width: 92%;
 }
 
-.imgFooter{
-    justify-content: flex-end;
+.footerLi{
+    color: #fff;
+    font-style: italic;
+    font-weight:bolder ;
+}
+#footerArticleLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+}
+
+.footerImgLogo{
+    width: 61px;
+    height: 56px;
+    margin-right: 31px;
 }

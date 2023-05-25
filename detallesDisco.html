@@ -13,55 +13,70 @@
 </head>
 
 <body>
-     <!--Header-->
-     <header class="headerPadre">
-        <section class="headerSuperior">
-            <article class="logo">
-                <img src="./img/logo.png" alt="logo" class="fotoLogo">
+    <!-------------------------------------Header--------------------------------------->
+    <header class="header">
+        <section class="headerSeccionPrimeraParte">
+
+            <article class="headerArticleLogo">
+                <img src="./img/logo.png" alt="logo" class="headerImgLogo">
             </article>
-            <article class="buscador">
-                <!--falta validacion del buscador-->
-                <form action="./resultas-busquedad.html" method="get" class="formHeader" onsubmit="return formulario()">
+
+     <!--FOTO DE MODO OSCURO-->    
+     <!------------------------->   
+            <article class="headerArticleForm">
+                <form action="./searchResults.html" method="get" id="buscadorForm" onsubmit="return formulario()">
                     <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
-                    <button class="botonBusqueda" type="submit"><i
+                    <button id="botonBusqueda" type="submit"><i
                             class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
                 </form>
-
             </article>
+
         </section>
 
-        <section class="containerMenu">
-            <article class="articleMenu">
+        <section class="headerSeccionNav">
                 <nav>
-                    <ul class="navLista">
-                        <li class="tab"> <a href="./home.html">Home</a></li>
-                        <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
+                    <ul class="headerNavUl">
+                        <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                        <!-- <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
                         <li class="tab"> <a href="./detallesDisco.html">Disco</a></li>
-                        <li class="tab"> <a href="./detallesCancion.html">Canciones</a></li>
-                        <li class="tab"> <a href="./generos.html">Genero</a></li>
-                        <li class="tab"> <a href="./detallesGeneros.html">Detalle de Genero</a></li>
-                        <li class="tab"> <a href="./playlist.html">Mi Playlist</a></li>
+                        <li class="tab"> <a href="./detallesCancion.html">Canciones</a></li> -->
+                        <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                        <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                        <!-- <li class="tab"> <a href="./detallesGeneros.html">Detalle de Genero</a></li> -->
+                        
                     </ul>
                 </nav>
-            </article>
         </section>
     </header>
 
-    <main>
-        
-    </main>
-    <!--Footer-->
-    <footer class="footer">
-        <ul class="lista-footer">
-            <li> Tomas Kearney </li>
-            <li> Francisco Javier del Terror</li>
-            <li> Oriana Cacsire</li>
-        </ul>
-        <img src="./img/logo.png" alt="" class="imgFooter">
-    </footer>
+<!-----------------------------Body------------------------------->
+<main>
+<h1>¡Vive tus dias al compas de buena música!</h1>
 
+<!--CANCIONES-->
+    <section class="titulo">
+        <h2 class="title">Canciones</h2>
+    </section>
+
+<!--ALBUM-->
+
+<!--ARTISTAS-->
+
+</main>
+    <!-------------------------------Footer-------------------------------------------->
+    <footer class="footer">
+        <ul class="footerSeccionNav">
+            <li class="footerLi"> Tomas Kearney </li>
+            <li class="footerLi"> Francisco Javier del Terror</li>
+            <li class="footerLi"> Oriana Cacsire</li>
+        </ul>
+        <article id = "footerArticleLogo">
+            <img src="./img/logo.png" alt="" class="footerImgLogo">
+        </article>
+        
+    </footer>
     <!--Vincular con el javascript correspondiente-->
-    <script type="text/javascript" src="./js/detallesDisco.js"></script>
+    <script type="text/javascript" src="./js/home.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+ul, li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+.headerPadre{ /*headerpadre tamaño del header total*/
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: aqua;
+}
+/*Header Superior*/
+ .headerSuperior{
+    height: 15vh;
+    background-color: blue;
+    box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 63px 0px 44px;
+}
+.buscador{
+    width: 50%; /*50% de su contenedor*/
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: flex-end;
+}
+.formHeader{
+    width: 100%; /*el 100% del 50%*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#searchInput{
+    width: 100%;
+    padding: 10px;
+}
+
+.botonBusqueda{
+    width: 15%;
+    padding: 10px;
+}
+
+/*logo*/
+.logo{
+    width: 28%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fotoLogo{
+    width: 36%;
+    height: 15vh;
+}
+
+/*BARRA MENU*/
+.containerMenu{
+    width: 100%;
+    height: 10vh;
+    background-color: darkblue;
+    padding: 0px 20px; /*para que haigan espacios entre las cajas*/
+}
+.articleMenu{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav{
+    width: 100%;
+}
+.navLista {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tab{
+    width: 14%;
+    height: 6vh;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+nav li a {
+   padding: 5px;
+   color: black;
+   text-transform: uppercase;
+   font-size: 14px;
+}
+
+
+/*Footer*/
+
+.footer{
+    display: flex;
+    height: 12vh;
+    background-color: rgba(169, 194, 169, 0.378);
+}
+
+.lista-footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    width: 95%;
+}
+
+.imgFooter{
+    justify-content: flex-end;
+}
