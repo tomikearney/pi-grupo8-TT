@@ -1,15 +1,11 @@
-// let apiKey = 
-//formulario de busqueda
+let cancionesFavoritas = localStorage.getItem("cancionesFavoritas");
+let resultadolocal = JSON.parse(cancionesFavoritas);
+console.log(resultadolocal);
+let listacanciones= document.querySelector("articleMain");
 
-//Botón para agregar a favoritos
-let btnFavoritos = document.querySelector(".btnFavoritos");
-btnFavoritos.addEventListener('click', function(){
-    alert('Rediriendote a tu canción favorita')
-});
-
-//obtengo los datos necesarios para poder iterar, en ese caso son los favoritos.
-// let recuperoStorage = localStorage.getItem('playlist');
-// //como nos da un string, lo vuelvo a su modo original para iterarlos.
-// let playlist = JSON.parse(recuperoStorage)
-
-// console.log(playlist)
+for (let i= 0; i< resultadolocal.length; i++) {
+   listacanciones.innerHTML += `<img class="song" src="./img/artistasHome.png "  alt="" >
+   <h3 class="title">Titulo</h3>
+   <p class="name">Nombre del autor</p>`
+    
+}
