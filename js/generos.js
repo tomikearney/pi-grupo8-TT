@@ -10,8 +10,9 @@
 .then(function (data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
+        console.log(data)
        acanciones.innerHTML += `<li class="listaGenero">
-                        <a class="aclickeo" href="./detail-genres.html?idGenero=${data.genres[i].id}">${data.genres[i].name}</a>
+                        <a class="aclickeo" href="./detallesGenereos.html?idGenero=${data.id[i]}">${data.name[i]}</a>
                         </li>`;
        
        
