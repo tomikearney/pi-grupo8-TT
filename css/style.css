@@ -1,11 +1,11 @@
 *{
     box-sizing: border-box;
     font-family: '', sans-serif;
-}Montserrat
+    margin: 0;
+}
 
 body{
     /*background-image: url(../img/fondo.jpeg);*/
-    margin: 0;
     border: 0;
     padding: 0;
     width: 100%;
@@ -60,7 +60,6 @@ ul, li{
 }
 
 /*headerSeccionForm*/
-
 .headerArticleForm{
     width: 50%; /*50% de su contenedor*/
     display: flex;
@@ -90,6 +89,7 @@ ul, li{
     border-radius: 5px;
 
 }
+
 /*frasesPage*/
 .frasesPage{
     text-align: center;
@@ -185,6 +185,21 @@ ul, li{
     text-align: center;
 }
 
+/*Para acomodar unicamente la seccion del disco*/
+#discosSeccion {
+    height: 281px;
+}
+
+#discosSeccion .articleMain{
+    height: 281px;
+}
+
+#discosSeccion .articleMain img {
+    height: 88px;
+    width: 95px;
+}
+/*------------------------------*/
+
 .articleMain{
     height: 180px;
     width: 150px;
@@ -201,7 +216,7 @@ ul, li{
 
 .articleMain p {
     padding: 0 15px;
-    font-size: 10px;
+    font-size: 15px;
     text-align: start;
     margin: 0%;
 }
@@ -211,11 +226,13 @@ ul, li{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 80px;
     width: 90px;
-    border-radius: 20px;
+    border-radius: 7px;
 }
-
+.articleMain a{
+    padding: 4px;
+}
 .articleMain h3{
     display: flex;
     text-align: start;
@@ -223,3 +240,21 @@ ul, li{
     margin: 0%;
     padding: 0 15px;
 }   
+.verMas{
+    font-size: 16px;
+    margin-top: 7px;
+    background-color: rgb(102, 134, 208);
+    padding: 5px;
+}
+
+/*color de fuente de cada contendor artista-Album/disco-Cancion*/
+a .title{
+    color: black;
+}
+
+a .name{
+    color: black;
+}
+
+
+/*Detalle Canciones*/
