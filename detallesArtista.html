@@ -21,10 +21,10 @@
                 <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
             </article>
 
-     <!--FOTO DE MODO OSCURO-->    
-     <!------------------------->   
+            <!--FOTO DE MODO OSCURO-->
+            <!------------------------->
             <article class="headerArticleForm">
-                <form action="./searchResults.html" method="get" id="buscadorForm" >
+                <form action="./searchResults.html" method="get" id="buscadorForm">
                     <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
                     <button id="botonBusqueda" type="submit"><i
                             class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
@@ -34,31 +34,30 @@
         </section>
 
         <section class="headerSeccionNav">
-                <nav>
-                    <ul class="headerNavUl">
-                        <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
-                        <!-- <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
+            <nav>
+                <ul class="headerNavUl">
+                    <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                    <!-- <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
                         <li class="tab"> <a href="./detallesDisco.html">Disco</a></li>
                         <li class="tab"> <a href="./detallesCancion.html">Canciones</a></li> -->
-                        <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
-                        <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
-                        <!-- <li class="tab"> <a href="./detallesGeneros.html">Detalle de Genero</a></li> -->
-                        
-                    </ul>
-                </nav>
+                    <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                    <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                    <!-- <li class="tab"> <a href="./detallesGeneros.html">Detalle de Genero</a></li> -->
+
+                </ul>
+            </nav>
         </section>
     </header>
 
 
-<!-----------------------------Body------------------------------->
+    <!-----------------------------Body------------------------------->
 
     <main>
-        <h2 class="h2NombreCantante">Nombre Artista</h2>
-        <img id="fotoCantante" src="./img/loader.gif" alt="">
-        <ul class="ulÁlbumesCantante">
-            <li>Álbum 1</li>
-            <li>Álbum 2</li>
-        </ul>
+
+        <section class="sectionDetallesArtistas"> <!--Recupero clase desde el js-->
+            
+        </section>
+
 
 
     </main>
@@ -70,10 +69,10 @@
             <li class="footerLi"> Francisco Javier del Terror</li>
             <li class="footerLi"> Oriana Cacsire</li>
         </ul>
-        <article id = "footerArticleLogo">
+        <article id="footerArticleLogo">
             <img src="./img/LogoModoClaro.png" alt="" class="footerImgLogo">
         </article>
-        
+
     </footer>
     <!--Vincular con el javascript correspondiente-->
     <script type="text/javascript" src="./js/detallesArtista.js"></script>

@@ -16,7 +16,7 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
           let artists = data.artists.data; /*se obtendra un array de objetos literales */
           // console.log(artists)
           let albums = data.albums.data /*aca tenemos un array de objeto literales de albums */
-          console.log(albums) 
+          //console.log(albums) 
           let canciones = data.tracks.data;
 
 
@@ -32,7 +32,7 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                                                   <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
                                                   <h3 class="title">${canciones[i].title}</h3>
                                                   <p class="name">${canciones[i].artist.name}</p>
-                                                  <a  href="./detallesCancion.html">
+                                                  <a  href="./detallesCancion.html?id=${canciones[i].id}">
                                                   <button type="" class="verMas">Ver más</button>
                                                   </a>
                                              </article>`
@@ -43,7 +43,7 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                seccionArtistas.innerHTML += `<article class="articleMain">
                                                   <img class="articleImg" src="${artists[i].picture_medium}" alt="">
                                                   <h3 class="name">${artists[i].name}</h3>
-                                                  <a href="./detallesArtista.html">
+                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
                                                   <button type="" class="verMas">Ver más</button>
                                                   </a>
                                              </article>`
