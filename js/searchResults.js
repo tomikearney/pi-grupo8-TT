@@ -21,20 +21,25 @@ form.addEventListener ("submit", function(e){
 /********************* SEARCH RESULTADOS ***************************** */
 let qs = location.search
 let qsOL = new URLSearchParams(qs)
-let id = qsOL.get("buscar") 
+let  id= qsOL.get("busqueda") 
 console.log(id);
-let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${id}`;
+let proxi = "https://cors-anywhere.herokuapp.com/"; 
+let endpoint ="https://api.deezer.com/chart" + id;
+let url = proxi+ endpoint;
 let cancionesbusquedad = document.querySelector("#cancionesSeccion")
 let titleArticlecancion = document.querySelector(".titleArticle")
 
 
-fetch(url1)
+fetch(url)
 .then(function(response) {
   return response.json()
 })
 .then(function(data) {
   console.log(data);
-  
+  for (let index = 0; index < array.length; index++) {
+     data;
+     
+  }
   if (cancionesbusquedad.length == 0) {
      titleArticlecancion.innertxt=  ` no hay resultado a tu busquedad `
 
