@@ -179,19 +179,27 @@ ul, li{
     margin: 0px 10px 18px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
 }
 
 /*Para acomodar unicamente la seccion del disco*/
-#discosSeccion {
+#discosSeccion .mainSection{
     height: 281px;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 #discosSeccion .articleMain{
     height: 281px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 61, 123, 0.241);
 }
 
 #discosSeccion .articleMain img {
@@ -201,7 +209,7 @@ ul, li{
 /*------------------------------*/
 
 .articleMain{
-    height: 180px;
+    height: 212px;
     width: 150px;
     display: flex;
     flex-direction: column;
@@ -211,7 +219,9 @@ ul, li{
 }
 
 .mainSections .title{
-    font-size: 20px;
+    max-width: 120px;
+    overflow: hidden;
+            
 }
 
 .articleMain p {
@@ -236,25 +246,20 @@ ul, li{
 .articleMain h3{
     display: flex;
     text-align: start;
-    align-items: flex-start;
     margin: 0%;
     padding: 0 15px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
 }   
+/*seccion canciones*/
+
 .verMas{
     font-size: 16px;
     margin-top: 7px;
     background-color: rgb(102, 134, 208);
     padding: 5px;
 }
-
-/*color de fuente de cada contendor artista-Album/disco-Cancion*/
-a .title{
-    color: black;
-}
-
-a .name{
-    color: black;
-}
-
 
 /*Detalle Canciones*/

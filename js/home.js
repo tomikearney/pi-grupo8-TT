@@ -1,7 +1,6 @@
-//Creo una variable donde este la Key de la API
-// let apiKey = d7e720fab5cf3fb9758c3d08bf546d59; PREGUNTAR
 let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
 let endpoint ="https://api.deezer.com/chart"; /*Es la ruta que proporciona la informacion a renderizar*/
+
 let url = proxi+endpoint; /*las dos unidades unidas iran en el fetch */
 
 fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la informacion, retornandonos una promesa */
@@ -70,20 +69,19 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
     
      
      //Declaro varables para el form 
-     let buscadorForm = document.querySelector("#buscadorForm");
-     let searchInput = document.querySelector("#searchInput");
-
+     let form = document.querySelector("#buscadorForm");//capturo el formulario
+     let campoBuscador = document.querySelector("#searchInput");//[name=busqueda]capturamos el campo del busqueda
+     
      //Agregamos un evento al buscador para que no deje buscar con campo vacio o menos de 3 carácteres
-     buscadorForm.addEventListener ("submit", function(e){
-          e.preventDefault();
-          if(searchInput.value == ''){
-               alert('Debe ingresar alguna palabra');
-          } else if (searchInput.value.length < 3){
-               alert('Ingresar al menos 3 caracteres');
-          } else{
-               this.submit();
-          }
+     form.addEventListener ("submit", function(e){
+         e.preventDefault();
+         console.log(campoBuscador.value);
+         if(campoBuscador.value == ''){
+              alert('Debe ingresar alguna palabra');
+         } else if (campoBuscador.value.length < 3){
+              alert('Ingresar al menos 3 caracteres');
+         } else{
+              this.submit();
+         }
      })
-
-   
 
