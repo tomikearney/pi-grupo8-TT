@@ -40,8 +40,7 @@ fetch(url)
         <p class="nombreArtista">${data.artist.name}</p>
         <h4 class="nombreDisco">${data.album.title}</h4>
         <img class="imgTapaDisco" src="${data.album.cover}" alt="Tapa disco"> 
-        <h4 class="agregarAMiPlaylist">Agregar a mi playlist</h4> 
-        <h4><a class="irAMiPlaylist" href="./playlist.html">Ir a mi playlist</a></h4>`
+        `
         
 
     })
