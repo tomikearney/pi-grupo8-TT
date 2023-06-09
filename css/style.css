@@ -240,9 +240,11 @@ ul, li{
     width: 90px;
     border-radius: 7px;
 }
+
 .articleMain a{
     padding: 4px;
 }
+
 .articleMain h3{
     display: flex;
     text-align: start;
@@ -252,7 +254,8 @@ ul, li{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: pre-wrap;
-}   
+} 
+  
 /*seccion canciones*/
 
 .verMas{

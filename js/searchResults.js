@@ -19,7 +19,7 @@ form.addEventListener ("submit", function(e){
 })
 
 /********************* SEARCH RESULTADOS ***************************** */
-let qs = location.search
+let qs = location.search // nos devuelve una qs en formato de texto que es dificl de trabajar
 let qsOL = new URLSearchParams(qs)
 let  id= qsOL.get("busqueda") 
 console.log(id);
@@ -31,45 +31,44 @@ let titleArticlecancion = document.querySelector(".titleArticle")
 
 
 fetch(url)
-.then(function(response) {
-  return response.json()
-})
-.then(function(data) {
-  console.log(data);
-  for (let index = 0; index < array.length; index++) {
-     data;
-     
-  }
-  if (cancionesbusquedad.length == 0) {
-     titleArticlecancion.innertxt=  ` no hay resultado a tu busquedad `
+    .then(function(response) {
+      return response.json()
+    })
+
+    .then(function(data) {
+      console.log(data);
+      for (let index = 0; index < array.length; index++) {
+        
+        
+      }
+      if (cancionesbusquedad.length == 0) {
+        titleArticlecancion.innerText=  ` no hay resultado a tu busquedad `
 
   
-     
-  }
-  else{
-     console.log(titleArticlecancion);
-     titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
-     for (let i = 0; i < 5; i++){
-          let canciones =  data.tracks.data;
-          console.log(canciones[i].id);
-          cancionesbusquedad.innerHTML += ` <article class="articleMain">
-                                                  <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
-                                                  <h3 class="title">${canciones[i].title}</h3>
-                                                  <p class="name">${canciones[i].artist.name}</p>
-                                                  <a  href="./detallesCancion.html?id=${canciones[i].id}">
-                                                  <button type="" class="verMas">Ver más</button>
-                                                  </a>
-                                             </article>`
+      }
+      else{
 
+        console.log(titleArticlecancion);
+        titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
+        for (let i = 0; i < 5; i++){
+              let canciones =  data.tracks.data;
+              console.log(canciones[i].id);
+              cancionesbusquedad.innerHTML += ` <article class="articleMain">
+                                                      <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
+                                                      <h3 class="title">${canciones[i].title}</h3>
+                                                      <p class="name">${canciones[i].artist.name}</p>
+                                                      <a  href="./detallesCancion.html?id=${canciones[i].id}">
+                                                      <button type="" class="verMas">Ver más</button>
+                                                      </a>
+                                                </article>`
 
+        }
 
-     }
-
-  }
-})
-.catch(function(error) {
- 
-})
+      }
+  })
+  .catch(function(error) {
+    console.log("Error: " + error);
+  })
 
 
 
@@ -104,14 +103,6 @@ fetch(url1)
   
   }
   
-  
-
-
-
-     
-
-
-     
 
 )
 .catch(function(error) {
