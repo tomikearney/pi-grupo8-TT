@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DETALLES DEL ARTISTA</title>
+    <title>GENEROS</title>
+    <link rel="stylesheet" href="./css/stlye.css">
     <!--Para traer iconos de Font Awasome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <!--Link hoja CSS-->
@@ -21,10 +22,10 @@
                 <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
             </article>
 
-            <!--FOTO DE MODO OSCURO-->
-            <!------------------------->
+     <!--FOTO DE MODO OSCURO-->    
+     <!------------------------->   
             <article class="headerArticleForm">
-                <form action="./searchResults.html" method="get" id="buscadorForm">
+                <form action="./searchResults.html" method="get" id="buscadorForm" >
                     <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
                     <button id="botonBusqueda" type="submit"><i
                             class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
@@ -34,31 +35,35 @@
         </section>
 
         <section class="headerSeccionNav">
-            <nav>
-                <ul class="headerNavUl">
-                    <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
-                   
-                    <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
-                    <li class="headerNavBoton"> <a href="./genero.html">Generos</a></li>
-
-
-                </ul>
-            </nav>
+                <nav>
+                    <ul class="headerNavUl">
+                        <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                        <!-- <li class="tab"> <a href="./detallesArtistas.html">Artistas</a></li>
+                        <li class="tab"> <a href="./detallesDisco.html">Disco</a></li>
+                        <li class="tab"> <a href="./detallesCancion.html">Canciones</a></li> -->
+                        <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                        <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                        <!-- <li class="tab"> <a href="./detallesGeneros.html">Detalle de Genero</a></li> -->
+                        
+                    </ul>
+                </nav>
         </section>
     </header>
+    
 
+    <!------------------------------------MAIN--------------------------------->
+    <section class="generoFather">
+       
+    <div class="generoCanciones">
+        <h2 class="tituloCanciones"></h2>
+        <br>
+        <article>
+            <ul class="aCanciones">
 
-    <!-----------------------------Body------------------------------->
+            </ul></article>
+    </div>
+    </section>
 
-    <main>
-
-        <section class="sectionDetallesArtistas"> <!--Recupero clase desde el js-->
-            
-        </section>
-
-
-
-    </main>
 
     <!-------------------------------Footer-------------------------------------------->
     <footer class="footer">
@@ -67,13 +72,14 @@
             <li class="footerLi"> Francisco Javier del Terror</li>
             <li class="footerLi"> Oriana Cacsire</li>
         </ul>
-        <article id="footerArticleLogo">
-            <img src="./img/LogoModoClaro.png" alt="" class="footerImgLogo">
+        <article id = "footerArticleLogo">
+            <img src="./img/logo.png" alt="" class="footerImgLogo">
         </article>
-
+        
     </footer>
     <!--Vincular con el javascript correspondiente-->
-    <script type="text/javascript" src="./js/detallesArtista.js"></script>
+    <script type="text/javascript" src="./js/home.js"></script>
+    <script type="text/javascript" src="./js/generos.js"></script>
 </body>
 
 </html>
