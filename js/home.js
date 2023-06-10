@@ -4,9 +4,10 @@ let endpoint ="https://api.deezer.com/chart"; /*Es la ruta que proporciona la in
 let url = proxi+endpoint; /*las dos unidades unidas iran en el fetch */
 
 fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la informacion, retornandonos una promesa */
-     .then (function(response){ /*recibe una funcion (callback) la cual recibe la respuesta (retorno) como parametro */
+/*Fetch es un metodo que recibe un parametro, en este caso la url ( de la Api) */
+     .then (function(response){ /*Acá comienza la promesa: recibe una funcion (callback) la cual recibe la respuesta (retorno) como parametro */
           // console.log(response) 
-          return response.json(); /*con .json convertimos la info en un objeto literal */
+          return response.json(); /*con .json convertimos la info en un objeto literal. Aca se devuelve el reponse la cual sera devuelto al siguiente then */
      })
 
      .then (function(data){ /*recibe una funcion (callback) que tiene como parametro los datos que recibira el primer then, convencion data */
