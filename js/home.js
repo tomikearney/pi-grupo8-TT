@@ -57,7 +57,7 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                                              <img class="articleImg" src="${albums[i].cover_medium}" alt="">
                                              <h3 class="title">${albums[i].title}</h3>
                                              <p class="name">${albums[i].artist.name}</p>
-                                             <a  href="./detallesDisco.html">
+                                             <a  href="./detallesDisco.html?id=${albums[i].id}">
                                              <button type="" class="verMas">Ver más</button>
                                              </a>
                                         </article>`
