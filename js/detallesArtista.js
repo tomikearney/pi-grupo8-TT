@@ -27,6 +27,7 @@ let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la
 let endpoint ="https://api.deezer.com/artist/" + id; /*Es la ruta que proporciona la informacion a renderizar, pero en este caso le agregó el id correspondiente a lo que el usuario clickeo*/
 let url = proxi+endpoint; /*las dos unidades unidas iran en el fetch */
 
+let sectionDetallesArtistas = document.querySelector(".sectionDetallesArtistas") //obtengo section donde debo escribir info general(albumes no)
 
 fetch(url)
     .then(function (response) {
@@ -34,14 +35,34 @@ fetch(url)
     })
     .then(function (data) {
         console.log(data);
-        let sectionDetallesArtistas = document.querySelector(".sectionDetallesArtistas") //obtengo section donde debo escribir todo
 
         sectionDetallesArtistas.innerHTML += ` <h2 class="h2NombreCantante">${data.name}</h2>
             <img id="fotoCantante" src="${data.picture}" alt="">
-            <ul class="ulÁlbumesCantante">
-                <li>Album 1</li>
-                <li>Álbum 2</li>
-            </ul>`
+            `
+        
+
+    })
+    .catch(function (error) {
+        console.log("Error: " + error);
+    })
+
+
+let urlAlbumes = url + "/albums" //url con información específica de los albumes del artista al que pertenece el id
+let listaAlbumesArtista = document.querySelector(".listaAlbumesArtista") //obtengo section donde debo escribir albumes
+
+    fetch(urlAlbumes) 
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data.data);
+        
+        for (let i = 0; i < 5; i++) {
+            listaAlbumesArtista.innerHTML += `
+            <li>${data.data[i].title}</li>
+            `
+        }
+        
         
 
     })
