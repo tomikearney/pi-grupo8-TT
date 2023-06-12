@@ -21,8 +21,7 @@ let queryStringObj = new URLSearchParams(queryString) // la paso a formato adecu
 
 let id = queryStringObj.get("id") //pongo la clave como parámentro y obtengo su valor
 
-//Creo una variable donde este la Key de la API
-// let apiKey = d7e720fab5cf3fb9758c3d08bf546d59; PREGUNTAR
+// apiKey = d7e720fab5cf3fb9758c3d08bf546d59; 
 let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
 let endpoint ="https://api.deezer.com/track/" + id; /*Es la ruta que proporciona la informacion a renderizar, pero en este caso le agregó el id correspondiente a lo que el usuario clickeo*/
 let url = proxi+endpoint; /*las dos unidades unidas iran en el fetch */
