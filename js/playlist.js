@@ -16,20 +16,28 @@ let campoBuscador = document.querySelector("#searchInput");
     })
 
 /*********************** PLAYLIST ********************************* */
+let favoritos = [];
 
-let cancionesFavoritas = localStorage.getItem("cancionesFavoritas");
-let cancionesFavoritasArray = JSON.parse(cancionesFavoritas); //objeto literal json a lenguaje manipulable en js
+let cancionesFavoritasStorange = localStorage.getItem("favoritos");
 
-let listaCancionesFavoritas= document.querySelector(".listaCancionesFavoritas");
+if(cancionesFavoritasStorange != null){
+    favoritos =JSON.parse (cancionesFavoritasStorange) //objeto literal json a lenguaje manipulable en js
+}
 
-for (let i= 0; i < cancionesFavoritasArray.length; i++) {
-    let idCanción = cancionesFavoritasArray[i]
+let sectionPlaylist= document.querySelector(".sectionPlaylist");
+let listaCancionesFavoritas = document.querySelector(".listaCancionesFavoritas")
 
-    // apiKey = d7e720fab5cf3fb9758c3d08bf546d59; 
+if (favoritos === null ) {
+    sectionPlaylist.innerHTML = `<p>Aún no agregaste nada a Tu Playlist</p>`
+} else if (favoritos.length === 0) {
+    sectionPlaylist.innerHTML =  `<p>Aún no agregaste nada a Tu Playlist</p>`
+} else {
+    for (let i= 0; i < favoritos.length; i++) {
+    let id = favoritos[i]
+
     let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
-    let endpoint ="https://api.deezer.com/track/" + idCanción; /*Es la ruta que proporciona la informacion a renderizar, pero en este caso le agregó el id correspondiente a lo que el usuario clickeo*/
+    let endpoint ="https://api.deezer.com/track/" + id; /*Es la ruta que proporciona la informacion a renderizar, pero en este caso le agregó el id correspondiente a lo que el usuario clickeo*/
     let url = proxi+endpoint; /*las dos unidades unidas iran en el fetch */
-
 
     fetch(url)
         .then(function (response) {
@@ -38,13 +46,18 @@ for (let i= 0; i < cancionesFavoritasArray.length; i++) {
         .then(function (data) {
             console.log(data);
             
-            listaCancionesFavoritas.innerHTML += 
-                `<h3 class="nombreCanciónFavorita">${data.title}</h3>
-                <p class="nombreArtistaCanciónFavorita">${data.artist.name}</p>
-                <img class="imgCanciónFavorita" src="${data.album.cover_small}" alt="imagen canción favorita" >`
+            listaCancionesFavoritas.innerHTML += `<li class= "liFavoritos">
+                                                        <img class='imgCancionFavorita' src="${data.album.cover}" alt="imagenCanciónFavorita">
+                                                        <a class='playlistDetalleSong' href="./detallesCancion.html?id=${data.id}">
+                                                        <h3 class='nombreCancionFavorita'>${data.title}</h3>
+                                                        <p class="nombreArtistaCanciónFavorita">${data.artist.name}</p>
+                                                        </a>
+                                                    </li>`
         })
         .catch(function (error) {
             console.log("Error: " + error);
         })
+    }
 }
+
 

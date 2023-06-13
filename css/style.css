@@ -13,6 +13,11 @@ body{
 
 a{
     text-decoration: none;
+
+}
+p{
+    text-decoration: none;
+    color: #000;
 }
 ul, li{
     list-style-type: none;
@@ -271,13 +276,175 @@ main{
 .sectionDetallesCancion{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 32px;
+    padding: 2px;
+}
+
+.articleDetallesSongs{
+order: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: rgba(137, 184, 249, 0.508);
+max-width: 650px;
+}
+
+.nameSongs{
+    font-style: oblique ;
+}
+
+.styleName{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.imgTapaDisco{
+    border-radius: 50%;
+    margin-bottom: 4px;
+    
+}
+.datosCancion{
+   padding: 16px 0px;
+}
+.duracionCancion{
+    font-size: 16px;
+    padding: 5px 0px;
+}
+.lanzamiento{
+    font-size: 16px;
+    padding: 5px 0px;
+}
+.explicitSong{
+    font-size: 16px;
+
+    padding: 5px 0px;
+}
+#previewSong{
+    padding: 4px 0px 11px 0px;
+}
+
+.btnsDetallesCanciones{
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.nombreCancion{
-    
+.artistaSong{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
+.btnsDetallesCanciones li {
+    margin: 4px;
+}
+
+#agregarAMiPlaylist{
+    background: rgb(102, 134, 208);
+    border-radius: 11px;
+    color: black;
+    display: flex;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.irAMiPlaylist{
+    background: rgb(102, 134, 208);
+    border-radius: 11px;
+    color: black; 
+    display: flex;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+/*Playlist*/
+.sectionPlaylist{
+    min-height: 60vh; /*de esta forma el footer se va al final de la pagina y a medida que se aumenta contenido se va aconomodando*/
+}
+.TituloPagePlaylist{
+    color: rgb(0, 61, 123) ;
+    font-style: italic;
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+}
+.listaCancionesFavoritas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.liFavoritos:hover {
+    transform:scale(1.07);
+    background-color: rgb(190, 199, 221);
+}
+
 /*Detalle Artistas */
+.contenedorDetallesArtistas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+}
+.articleDetallesArtistas{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(137, 184, 249, 0.508);
+    min-width: 38%;
+    min-height: 66vh;
+}
+.h2NombreCantante{
+    font-style: oblique ;
+    font-size: 40px;
+}
+
+#fotoCantante{
+    width: 76%;
+    padding: 9px;
+}
+.articleDetallesArtistasListado{
+    padding: 20px;
+}
+
+.tituloTopFiveAlbums{
+    color: rgb(0, 61, 123) ;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px;
+}
+.listaAlbumesArtista li{
+    /* list-style-type: numerica;  debate*/
+    margin-left: 9px;
+    padding: 9px;
+    font-weight: bolder;
+}
+.listaAlbumesArtista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /*Detalle Discos*/
+
+/*mediaQuery*/
+/*Modo Oscuro*/
+
+/*Página de Generos*/
+.generoFather{
+    min-height: 60vh;/*Acomodo de footer*/
+}
