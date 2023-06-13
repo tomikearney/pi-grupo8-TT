@@ -1,4 +1,4 @@
- /******************** FORMULARIO ******************************/
+/******************** FORMULARIO ******************************/
 let form = document.querySelector("#buscadorForm");
 let campoBuscador = document.querySelector("#searchInput");
     form.addEventListener ("submit", function(e){
