@@ -316,7 +316,7 @@ max-width: 650px;
 }
 .lanzamiento{
     font-size: 16px;
-    padding: 5px 0px;
+    padding: 16px 0px;
 }
 .explicitSong{
     font-size: 16px;
@@ -440,6 +440,64 @@ max-width: 650px;
 }
 
 /*Detalle Discos*/
+.sectionDetallesDisco{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 32px;
+    padding: 2px;
+}
+
+.articleDetallesDisco{
+order: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: rgba(137, 184, 249, 0.508);
+max-width: 650px;
+padding: 9px;
+
+}
+
+.TapaDisco{
+    margin-bottom: 4px;
+    
+}
+
+.articleCancionesDisco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancionAlbumH4{
+    color: rgb(0, 61, 123) ;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.listaCancionesDisco{
+    padding: 0px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.liCancionesAlbum{
+    padding: 2px;
+    list-style-type: numerica; 
+}
+
+.enlasesStyle{
+    color: #000;
+}
 
 /*mediaQuery*/
 /*Modo Oscuro*/

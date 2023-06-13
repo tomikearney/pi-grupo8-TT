@@ -35,14 +35,14 @@ fetch(url)
         console.log(data); //se modifico la seleccion de datos del dom, porque no vi otra forma de solucionar el orden :)
 
         let nombreDisco = document.querySelector(".nombreDisco");
-        let imgTapaDisco = document.querySelector(".imgTapaDisco");
-        let nombreArtista = document.querySelector(".nombreArtista");
+        let TapaDisco = document.querySelector(".TapaDisco");
+        let artistaSong = document.querySelector(".artistaSong");
         let generoAlbumArtista = document.querySelector(".generoAlbumArtista");
-        let fechaDisco = document.querySelector(".fechaDisco");
+        let lanzamiento = document.querySelector(".lanzamiento");
         
         nombreDisco.textContent = data.title;
-        imgTapaDisco.src = data.cover_medium;
-        nombreArtista.innerHTML +=  `<a href="./detallesArtista.html?id=${data.artist.id}">${data.artist.name}</a>`;
+        TapaDisco.src = data.cover_medium;
+        artistaSong.innerHTML +=  `<a  href="./detallesArtista.html?id=${data.artist.id}">${data.artist.name}</a>`;
         //se debe redirigir a la pagina de detalles genero, en caso que presente. 
         if(data.genres.data.length>0){
             generoAlbumArtista.innerHTML += ` <a href="detallesGeneros.html?id=${data.genres.data[0].id}">${data.genres.data[0].name}</a>`;
@@ -50,7 +50,7 @@ fetch(url)
             generoAlbumArtista.innerHTML
         }
 
-        fechaDisco.innerHTML +=data.release_date;
+        lanzamiento.innerHTML +=data.release_date;
 
         let listaCancionesDisco = document.querySelector(".listaCancionesDisco") //obtengo article donde debo escribir listado canciones del álbum
         //se agrego un par de cosa para que la lista de canciones se guarde. A su vez, luego rediriga a detallesCanciones.
@@ -59,7 +59,7 @@ fetch(url)
         for (let i = 0; i < data.tracks.data.length; i++) {
             let song =data.tracks.data[i];
             console.log(song)
-           songList +=`<li class='opensans'><p><a href="detallesCancion.html?id=${song.id}">${song.title}</a></p></li>`
+           songList +=`<li class='liCancionesAlbum'><p><a class = "enlasesStyle" href="detallesCancion.html?id=${song.id}">${song.title}</a></p></li>`
 
         } 
         listaCancionesDisco.innerHTML += songList;
