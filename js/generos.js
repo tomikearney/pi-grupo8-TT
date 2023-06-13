@@ -18,7 +18,7 @@
 
 /************************ GENEROS ***********************************/ 
  
- let urlgeneros = `https://api.allorigins.win/raw?url=https://api.deezer.com/genre`;
+ let urlgeneros = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre';
  let listaGeneros = document.querySelector(".listaGeneros")
  
 fetch(urlgeneros)
@@ -29,21 +29,17 @@ fetch(urlgeneros)
     .then(function (data) {
         console.log(data);
 
-        let generos = '';
-
-        for (let i = 0; i < data.data.length; i++) {
+        for(let i = 1; i < data.data.length; i++) { 
             console.log(data.data[i].name)
 
-            listaGeneros.innerHTML += `<li class="listaGenero">
-                                        <a class="aclickeo" href="./detallesGeneros.html?idGenero=${data.data[i].id}">${data.data[i].name}</a>
-                                    </li>`;
-        
-        
+            listaGeneros.innerHTML += `<article class="articleGeneros">
+                                            <a class="aClickeo" href="./detallesGeneros.html?id=${data.data[i].id}">${data.data[i].name}</a>
+                                        </article>`
         }
-}
-)
-.catch(function (error) {
-    return error;
- });
+    })
+
+    .catch(function (error) {
+        return error;
+    });
 
 

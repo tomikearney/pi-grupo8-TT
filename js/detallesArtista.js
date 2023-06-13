@@ -35,37 +35,29 @@ fetch(url)
     .then(function (data) {
         console.log(data);
         
-
         articleDetallesArtistas.innerHTML += ` <h2 class="h2NombreCantante">${data.name}</h2>
-            <img id="fotoCantante" src="${data.picture}" alt="">
-            `
+            <img id="fotoCantante" src="${data.picture_medium}" alt="">`
         
+        let urlAlbumes = url + "/albums?limit=5" //url con información específica de los albumes del artista al que pertenece el id solo 5 porque de cada artista necesitamos 5 
+        let listaAlbumesArtista = document.querySelector(".listaAlbumesArtista") //obtengo section donde debo escribir albumes
 
+        fetch(urlAlbumes) 
+            .then(function (albumResponse) {
+            return albumResponse.json()
+            })
+
+            .then(function (albumData) {
+                console.log(albumData);
+            
+                for (let i = 0; i < albumData.data.length; i++) {
+                listaAlbumesArtista.innerHTML += `<li><a href="detallesDiscos.html?id=${albumData.data[i].id}">${albumData.data[i].title}</a></li>`
+            
+                }
+            })
     })
     .catch(function (error) {
-        console.log("Error: " + error);
-    })
+        console.log("Error: " + error)
+    });
 
 
-let urlAlbumes = url + "/albums" //url con información específica de los albumes del artista al que pertenece el id
-let listaAlbumesArtista = document.querySelector(".listaAlbumesArtista") //obtengo section donde debo escribir albumes
-
-    fetch(urlAlbumes) 
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        console.log(data.data);
-        
-        for (let i = 0; i < 5; i++) {
-            listaAlbumesArtista.innerHTML += `
-            <li>${data.data[i].title}</li>
-            `
-        }
-        
-        
-
-    })
-    .catch(function (error) {
-        console.log("Error: " + error);
-    })
+    //se deben poner uno dentro de otro fetch para que cuando se haga click en un album se rediriga y no de error

@@ -1,30 +1,47 @@
-let qs = location.search;
-let qsOL= new URLSearchParams(qs);
-let id = qsOL.get("id");
+let queryString = location.search;
+let queryStringObj= new URLSearchParams(queryString);
+let id = queryStringObj.get("id"); //MODIFICACION DE ENDPOINTS
+let urlGeneros = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/" + id;
+let urlArtistasForAGenre = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/`+id+`/artists`;
 
-let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/chart" + id;
-let cancionesSeccion = document.querySelector("#cancionesSeccion")
+let listaGeneros = document.querySelector(".listaGeneros") //article de genero donde estaran los generos
 
-fetch(url)
-.then(function(response) {
-  return response.json()
-})
-.then(function(data) {
-  console.log(data);
-  for (let i = 0; i < 15; i++){
-    let artists = data.artists.data;;
-    console.log(canciones[i].id);
-    cancionesSeccion.innerHTML += `+= <article class="articleMain">
-                                       <img class="articleImg" src="${artists[i].picture_medium}" alt="">
-                                       <h3 class="name">${artists[i].name}</h3>
-                                       <a href="./detallesArtista.html?id=${artists[i].id}">
-                                       <button type="" class="verMas">Ver más</button> </a>
-                                  </article>`
+fetch(urlGeneros)
+    .then(function(response) {
+      return response.json();
+    })
+
+    .then(function(data) {
+
+      let titleGenero = document.querySelector(".titleGenero");
+      titleGenero.innerText = data.name;
+    })
+    .catch(function (error) {
+      console.log(`Error:${error}`);
+    }); 
 
 
-}
+fetch(urlArtistasForAGenre) // esta url nos da todos los artistas pertenecientes a un determinado genero
+  .then( function (response) {
+    return response.json();
+  })
+  
+  .then(function (data) {
+    // console.log(data);
+    let liForGeneros  = document.querySelector(".liForGeneros")
 
-})
-.catch(function(error) {
-  console.log("Error: " + error);
-})
+    for (let i = 0; i < data.data.length; i++) {
+      liForGeneros.innerHTML +=` <li>
+                                    <a href="detallesArtista.html?id=${data.data[i].id}">
+                                    <h2 class='raleway'>${data.data[i].name}</h2>
+                                    <img class='invisible-border' src="${data.data[i].picture_medium}" alt="${data.data[i].name}">
+                                    </a>
+                                </li>`
+    }
+  
+  })
+  .catch(function (error) {
+    console.log(`Error:${error}`);
+  }); 
+ 
+
