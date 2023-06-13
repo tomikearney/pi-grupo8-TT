@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GENEROS</title>
-    <link rel="stylesheet" href="./css/stlye.css">
     <!--Para traer iconos de Font Awasome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <!--Link hoja CSS-->
@@ -27,11 +26,10 @@
             <article class="headerArticleForm">
                 <form action="./searchResults.html" method="get" id="buscadorForm" >
                     <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
-                    <button id="botonBusqueda" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                    <button id="botonBusqueda" type="submit">
+                        <i class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
                 </form>
             </article>
-
         </section>
 
         <section class="headerSeccionNav">
@@ -53,15 +51,12 @@
 
     <!------------------------------------MAIN--------------------------------->
     <section class="generoFather">
-       
-    <div class="generoCanciones">
-        <h2 class="tituloCanciones"></h2>
-        <br>
-        <article>
-            <ul class="aCanciones">
-
-            </ul></article>
-    </div>
+        <div class="generoCanciones">
+            <h2 class="tituloGeneros">Generos</h2>
+            <br>
+                <ul class="listaGeneros">
+                </ul>
+        </div>
     </section>
 
 
@@ -78,7 +73,6 @@
         
     </footer>
     <!--Vincular con el javascript correspondiente-->
-    <script type="text/javascript" src="./js/home.js"></script>
     <script type="text/javascript" src="./js/generos.js"></script>
 </body>
 
