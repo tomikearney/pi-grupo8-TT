@@ -27,10 +27,8 @@ if(cancionesFavoritasStorange != null){
 let sectionPlaylist= document.querySelector(".sectionPlaylist");
 let listaCancionesFavoritas = document.querySelector(".listaCancionesFavoritas")
 
-if (favoritos === null ) {
+if (favoritos === null ||favoritos.length === 0 ) {
     sectionPlaylist.innerHTML = `<p>Aún no agregaste nada a Tu Playlist</p>`
-} else if (favoritos.length === 0) {
-    sectionPlaylist.innerHTML =  `<p>Aún no agregaste nada a Tu Playlist</p>`
 } else {
     for (let i= 0; i < favoritos.length; i++) {
     let id = favoritos[i]

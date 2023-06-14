@@ -21,11 +21,11 @@ form.addEventListener ("submit", function(e){
 /********************* SEARCH RESULTADOS ***************************** */
 let qs = location.search // nos devuelve una qs en formato de texto que es dificl de trabajar
 let qsOL = new URLSearchParams(qs)
-let  id= qsOL.get("busqueda") 
-console.log(id);
+let  id = qsOL.get("busqueda") 
 let proxi = "https://cors-anywhere.herokuapp.com/"; 
-let endpoint ="https://api.deezer.com/chart" + id;
+// let endpoint =`https://api.deezer.com/search?id${}`;
 let url = proxi+ endpoint;
+
 let cancionesbusquedad = document.querySelector("#cancionesSeccion")
 let titleArticlecancion = document.querySelector(".titleArticle")
 

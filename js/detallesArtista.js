@@ -50,7 +50,7 @@ fetch(url)
                 console.log(albumData);
             
                 for (let i = 0; i < albumData.data.length; i++) {
-                listaAlbumesArtista.innerHTML += `<li><a href="detallesDiscos.html?id=${albumData.data[i].id}">${albumData.data[i].title}</a></li>`
+                listaAlbumesArtista.innerHTML += `<li><a href="./detallesDisco.html?id=${albumData.data[i].id}">${albumData.data[i].title}</a></li>`
             
                 }
             })
