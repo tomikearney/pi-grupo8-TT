@@ -511,13 +511,13 @@ padding: 9px;
 
 }
 
-.tituloGeneros{
+.tituloGenero{
  text-align: center;
  padding: 20px;
  font-size: 27px;
 }
 
-.articleGeneros{
+.divGeneros{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -526,7 +526,7 @@ padding: 9px;
     padding: 3px;
 }
 
-.listaGeneros{
+.articleGenerosMusicales{ 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -548,6 +548,50 @@ padding: 9px;
 
 .aClickeo:hover{
     background-color: #1d65b1;
+}
+
+
+/*Detalle Generos*/
+#mainGeneroDetalles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listaForGeneros{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.listaForGeneros li{
+    margin: 2px;
+
+}
+
+.listaForGeneros li:hover{
+    background-color: #f1f1f1;
+}
+
+.listaForGeneros img{
+    width: 15%;
+    border-color: transparent;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.nameSinger{
+    color: #000;
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 /*mediaQuery*/
 /*Modo Oscuro*/

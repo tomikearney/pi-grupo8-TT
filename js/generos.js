@@ -19,7 +19,7 @@
 /************************ GENEROS ***********************************/ 
  
  let urlgeneros = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre';
- let listaGeneros = document.querySelector(".listaGeneros")
+ let articleGenerosMusicales = document.querySelector(".articleGenerosMusicales")
  
 fetch(urlgeneros)
     .then(function (response) {
@@ -32,9 +32,9 @@ fetch(urlgeneros)
         for(let i = 1; i < data.data.length; i++) { 
             console.log(data.data[i].name)
 
-            listaGeneros.innerHTML += `<article class="articleGeneros">
+            articleGenerosMusicales.innerHTML += `<div class="divGeneros">
                                             <a class="aClickeo" href="./detallesGeneros.html?id=${data.data[i].id}">${data.data[i].name}</a>
-                                        </article>`
+                                        </div>`
         }
     })
 

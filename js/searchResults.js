@@ -44,7 +44,7 @@ fetch(url)
       
       if (cancionesbusquedad.length == 0) {
         titleArticlecancion.innerText=  ` no hay resultado a tu busquedad `
-
+      }  
       //Si no hay resultados de búsqueda
       if (data.data.length == 0) {
         titleArticleCanciones.innerText=  `No hay resultados de canciones para tu busqueda `
@@ -65,8 +65,6 @@ fetch(url)
                                                       </a>
                                                 </article>`
               }
-              
-
         }}
         return data
 
