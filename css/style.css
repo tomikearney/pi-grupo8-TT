@@ -145,7 +145,7 @@ ul, li{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-left: 18px;
+    margin-left: 150px;
     margin-top: 4px;
     display: none; /*cambiar en mq*/
 }
@@ -626,7 +626,7 @@ padding: 9px;
     }
 
     nav{
-        width: 300px;
+        width: 0px; /*200px para que aparezca el menu */
         height:32vh;
         position: fixed;
         top: 80px;
@@ -640,7 +640,9 @@ padding: 9px;
     .headerNavUl{
         flex-direction: column;
         height: 32vh;
-        padding: 0px;
+        padding: 10px;
+        align-items: flex-start;
+
     }
 
     .headerNavUl li{
@@ -654,9 +656,28 @@ padding: 9px;
         
     }
 
+    .headerNavBoton{
+        font-size: 25px;
+        background-color: #fff;
+        border-radius: 0px;
+        padding: 1px;
+        box-shadow:0px;
+        cursor: pointer;
+    }
 
+    .headerNavBoton a{ 
+       border-radius:0;
+       color:#000;
+    }
 
+    #icon-menu{
+        display: flex; /*aparece lcono del menu*/
+    }
 
+    .containerAll{
+        /*cuando se Apreta el boton de menu hay una pequeña traslacion en el eje X para que se muestre el menu*/
+        transform:translateX(200px); /*se aplica por medio de un evento en js*/ 
+    }
     /*main*/
     main{
         min-height: 60vh;
