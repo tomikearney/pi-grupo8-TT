@@ -45,25 +45,27 @@ fetch(url)
       if (cancionesbusquedad.length == 0) {
         titleArticlecancion.innerText=  ` no hay resultado a tu busquedad `
 
-  
-      }
-      else{
+      //Si no hay resultados de búsqueda
+      if (data.data.length == 0) {
+        titleArticleCanciones.innerText=  `No hay resultados de canciones para tu busqueda `
 
         console.log(titleArticlecancion);
         console.log(data.tracks.data);
         titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `;
         console.log(data.tracks.data);
         for (let i = 0; i < 5; i++){
-              let canciones =  data.tracks.data;
-              console.log(canciones[i].id);
-              cancionesbusquedad.innerHTML += ` <article class="articleMain">
-                                                      <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
-                                                      <h3 class="title">${canciones[i].title}</h3>
-                                                      <p class="name">${canciones[i].artist.name}</p>
-                                                      <a  href="./detallesCancion.html?id=${canciones[i].id}">
+              tracks = data.data
+              if (tracks[i] != null) { //Si hay más tracks que recorrer
+                cancionesbusqueda.innerHTML += ` <article class="articleMain">
+                                                      <img class="articleImg" src="${tracks[i].album.cover_medium}" alt=""> 
+                                                      <h3 class="title">${tracks[i].title}</h3>
+                                                      <p class="name">${tracks[i].artist.name}</p>
+                                                      <a  href="./detallesCancion.html?id=${tracks[i].id}">
                                                       <button type="" class="verMas">Ver más</button>
                                                       </a>
                                                 </article>`
+              }
+              
 
         }}
         return data
@@ -73,10 +75,11 @@ fetch(url)
   })
   .catch(function(error) {
     console.log("Error: " + error);
+
   })
 
 
-
+//RESULTADOS ARTISTAS
 let artistasSeccion= document.querySelector("#artistasSeccion")
 let url1= `https://api.allorigins.win/raw?url=https://api.deezer.com/search/artist?q=${id}`
 fetch(url)
@@ -85,8 +88,9 @@ fetch(url)
 })
 .then(function(data) {
   console.log(data);
-      if (artistasSeccion.length == 0) {
-     titleArticlecancion.innertxt=  ` no hay resultado a tu busquedad `
+  if (data.data.length == 0) {
+        titleArticleArtistas.innerText=  `No hay resultados de artistas para tu busqueda `
+
       }
      else{
           console.log(titleArticlecancion);
@@ -108,13 +112,15 @@ fetch(url)
   return data
   }
   
+  esconderGif()
 
-)
+})
 .catch(function(error) {
  return error;
 })
 
 
+//RESULTADOS DISCOS
 let discosSeccion = document.querySelector("#discosSeccion")
 let urlDiscos = `https://api.allorigins.win/raw?url=https://api.deezer.com/search/album?q=${id}`
 fetch(url)
@@ -122,29 +128,32 @@ fetch(url)
   return response.json()
 })
 .then(function(data) {
-  console.log(data);
-  if (discosSeccion.length == 0) {
-     titleArticlecancion.innertxt=  ` no hay resultado a tu busquedad `
 
-  
-     
+  console.log(data);
+  if (data.data.length == 0) {
+    titleArticleDiscos.innerText=  `No hay resultados de álbumes para tu busqueda`
+
   }
+
   else{
-     console.log(titleArticlecancion);
-     titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
      for (let i = 0; i < 5; i++){
-          let albums = data.albums.data
-          console.log(canciones[i].id);
-          discosSeccion.innerHTML += `<article class="articleMain">
-          <img class="articleImg" src="${albums[i].cover_medium}" alt="">
-          <h3 class="title">${albums[i].title}</h3>
-          <p class="name">${albums[i].artist.name}</p>
-          <a  href="./detallesDisco.html">
-          <button type="" class="verMas">Ver más</button>
-          </a>
-     </article>`
+          let albums = data.data
+          if (albums[i] != null) {
+            discosSeccion.innerHTML += `<article class="articleMain">
+                                      <img class="articleImg" src="${albums[i].cover_medium}" alt="">
+                                      <h3 class="title">${albums[i].title}</h3>
+                                      <p class="name">${albums[i].artist.name}</p>
+                                      <a href="./detallesDisco.html">
+                                      <button type="" class="verMas">Ver más</button>
+                                      </a>
+                                      </article>`
+          }
+          
      }
 }
+
+esconderGif()
+
 })
 .catch(function(error) {
   console.log("Error: " + error);
