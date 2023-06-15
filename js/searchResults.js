@@ -21,13 +21,17 @@ form.addEventListener ("submit", function(e){
 /********************* SEARCH RESULTADOS ***************************** */
 let qs = location.search // nos devuelve una qs en formato de texto que es dificl de trabajar
 let qsOL = new URLSearchParams(qs)
-let  id = qsOL.get("busqueda") 
+let  id = qsOL.get("busqueda") //Como id se guarda lo que busca el usuario
 let proxi = "https://cors-anywhere.herokuapp.com/"; 
-// let endpoint =`https://api.deezer.com/search?id${}`;
+let endpoint =`https://api.deezer.com/search/track?q=${id}`;
 let url = proxi+ endpoint;
 
-let cancionesbusquedad = document.querySelector("#cancionesSeccion")
-let titleArticlecancion = document.querySelector(".titleArticle")
+let FindResults = document.querySelector(".FindResults")
+FindResults.innerText = `Aquí están los resultados de búsqueda para ${id}`
+
+
+let cancionesbusqueda = document.querySelector("#cancionesSeccion")
+let titleArticleCanciones = document.querySelector(".titleArticleCanciones")
 
 
 fetch(url)
@@ -37,34 +41,33 @@ fetch(url)
 
     .then(function(data) {
       console.log(data);
-      for (let index = 0; index < array.length; index++) {
-        
-        
-      }
-      if (cancionesbusquedad.length == 0) {
-        titleArticlecancion.innerText=  ` no hay resultado a tu busquedad `
+      //Si no hay resultados de búsqueda
+      if (data.data.length == 0) {
+        titleArticleCanciones.innerText=  `No hay resultados de canciones para tu busqueda `
 
-  
       }
-      else{
-
-        console.log(titleArticlecancion);
-        titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
+      
+      //Si hay resultados, recorro el array
+      else {   
         for (let i = 0; i < 5; i++){
-              let canciones =  data.tracks.data;
-              console.log(canciones[i].id);
-              cancionesbusquedad.innerHTML += ` <article class="articleMain">
-                                                      <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
-                                                      <h3 class="title">${canciones[i].title}</h3>
-                                                      <p class="name">${canciones[i].artist.name}</p>
-                                                      <a  href="./detallesCancion.html?id=${canciones[i].id}">
+              tracks = data.data
+              cancionesbusqueda.innerHTML += ` <article class="articleMain">
+                                                      <img class="articleImg" src="${tracks[i].album.cover_medium}" alt=""> 
+                                                      <h3 class="title">${tracks[i].title}</h3>
+                                                      <p class="name">${tracks[i].artist.name}</p>
+                                                      <a  href="./detallesCancion.html?id=${tracks[i].id}">
                                                       <button type="" class="verMas">Ver más</button>
                                                       </a>
                                                 </article>`
 
         }
-
       }
+      
+
+      
+      
+      
+
   })
   .catch(function(error) {
     console.log("Error: " + error);
@@ -73,33 +76,36 @@ fetch(url)
 
 
 let artistasSeccion= document.querySelector("#artistasSeccion")
-let url1= `https://api.allorigins.win/raw?url=https://api.deezer.com/search/artist?q=${id}`
-fetch(url1)
+let titleArticleArtistas = document.querySelector(".titleArticleArtistas")
+
+
+let endpointArtist =`https://api.deezer.com/search/artist?q=${id}`;
+let urlArtist = proxi+ endpointArtist;
+
+fetch(urlArtist)
 .then(function(response) {
   return response.json()
 })
 .then(function(data) {
   console.log(data);
-      if (artistasSeccion.length == 0) {
-     titleArticlecancion.innertxt=  ` no hay resultado a tu busquedad `
+  if (data.data.length == 0) {
+        titleArticleArtistas.innerText=  `No hay resultados de artistas para tu busqueda `
+
       }
-     else{
-          console.log(titleArticlecancion);
-          titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
-          for (let i = 0; i < 5; i++){
-               let artists = data.artists.data;;
-               console.log(canciones[i].id);
-               artistasSeccion.innerHTML += `+= <article class="articleMain">
-                                                  <img class="articleImg" src="${artists[i].picture_medium}" alt="">
-                                                  <h3 class="name">${artists[i].name}</h3>
-                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
-                                                  <button type="" class="verMas">Ver más</button> </a>
-                                             </article>`
-     
-     
-          }
-     
-       }
+  else{
+        for (let i = 0; i < 5; i++){
+             let artists = data.data;;
+             artistasSeccion.innerHTML += `<article class="articleMain">
+                                                <img class="articleImg" src="${artists[i].picture_medium}" alt="">
+                                                <h3 class="name">${artists[i].name}</h3>
+                                                <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                <button type="" class="verMas">Ver más</button> </a>
+                                           </article>`
+   
+   
+        }
+   
+  }
   
   }
   
@@ -110,34 +116,38 @@ fetch(url1)
 })
 
 
+
 let discosSeccion = document.querySelector("#discosSeccion")
-let urlDiscos = `https://api.allorigins.win/raw?url=https://api.deezer.com/search/album?q=${id}`
+let titleArticleDiscos = document.querySelector(".titleArticleDiscos")
+
+
+let endpointAlbum =`https://api.deezer.com/search/album?q=${id}`;
+let urlDiscos = proxi+ endpointAlbum;
+
 fetch(urlDiscos)
 .then(function(response) {
   return response.json()
 })
 .then(function(data) {
-  console.log(data);
-  if (discosSeccion.length == 0) {
-     titleArticlecancion.innertxt=  ` no hay resultado a tu busquedad `
 
-  
-     
+  console.log(data);
+  if (data.data.length == 0) {
+    titleArticleDiscos.innerText=  `No hay resultados de álbumes para tu busqueda`
+
   }
+
   else{
-     console.log(titleArticlecancion);
-     titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
      for (let i = 0; i < 5; i++){
-          let albums = data.albums.data
-          console.log(canciones[i].id);
+          let albums = data.data
+          console.log(albums[i]);
           discosSeccion.innerHTML += `<article class="articleMain">
-          <img class="articleImg" src="${albums[i].cover_medium}" alt="">
-          <h3 class="title">${albums[i].title}</h3>
-          <p class="name">${albums[i].artist.name}</p>
-          <a  href="./detallesDisco.html">
-          <button type="" class="verMas">Ver más</button>
-          </a>
-     </article>`
+                                      <img class="articleImg" src="${albums[i].cover_medium}" alt="">
+                                      <h3 class="title">${albums[i].title}</h3>
+                                      <p class="name">${albums[i].artist.name}</p>
+                                      <a href="./detallesDisco.html">
+                                      <button type="" class="verMas">Ver más</button>
+                                      </a>
+                                      </article>`
      }
 }
 })
