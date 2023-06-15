@@ -23,11 +23,13 @@ let qs = location.search // nos devuelve una qs en formato de texto que es dific
 let qsOL = new URLSearchParams(qs)
 let  id = qsOL.get("busqueda") 
 let proxi = "https://cors-anywhere.herokuapp.com/"; 
-// let endpoint =`https://api.deezer.com/search?id${}`;
-let url = proxi+ endpoint;
+let endpoint =`https://api.deezer.com/search?q=${id}`;
+
+let url = proxi + endpoint;
 
 let cancionesbusquedad = document.querySelector("#cancionesSeccion")
 let titleArticlecancion = document.querySelector(".titleArticle")
+console.log(cancionesbusquedad);
 
 
 fetch(url)
@@ -37,10 +39,9 @@ fetch(url)
 
     .then(function(data) {
       console.log(data);
-      for (let index = 0; index < array.length; index++) {
         
         
-      }
+      
       if (cancionesbusquedad.length == 0) {
         titleArticlecancion.innerText=  ` no hay resultado a tu busquedad `
 
@@ -49,7 +50,9 @@ fetch(url)
       else{
 
         console.log(titleArticlecancion);
-        titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `
+        console.log(data.tracks.data);
+        titleArticlecancion.innerHTML=  ` Estos son los resultados a tu busquedad  `;
+        console.log(data.tracks.data);
         for (let i = 0; i < 5; i++){
               let canciones =  data.tracks.data;
               console.log(canciones[i].id);
@@ -62,9 +65,11 @@ fetch(url)
                                                       </a>
                                                 </article>`
 
-        }
+        }}
+        return data
 
-      }
+
+      
   })
   .catch(function(error) {
     console.log("Error: " + error);
@@ -74,7 +79,7 @@ fetch(url)
 
 let artistasSeccion= document.querySelector("#artistasSeccion")
 let url1= `https://api.allorigins.win/raw?url=https://api.deezer.com/search/artist?q=${id}`
-fetch(url1)
+fetch(url)
 .then(function(response) {
   return response.json()
 })
@@ -100,19 +105,19 @@ fetch(url1)
           }
      
        }
-  
+  return data
   }
   
 
 )
 .catch(function(error) {
-  console.log("Error: " + error);
+ return error;
 })
 
 
 let discosSeccion = document.querySelector("#discosSeccion")
 let urlDiscos = `https://api.allorigins.win/raw?url=https://api.deezer.com/search/album?q=${id}`
-fetch(urlDiscos)
+fetch(url)
 .then(function(response) {
   return response.json()
 })
