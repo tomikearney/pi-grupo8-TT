@@ -38,7 +38,7 @@ ul, li{
     height: 25vh;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap; 
     align-items: center;
     justify-content: space-between;
     background-color: rgb(0, 61, 123);
@@ -104,6 +104,7 @@ ul, li{
 .frasesPage{
     text-align: center;
     font-style: italic;
+    padding-bottom:5px ;
 }
 /*headerSeccionNav*/
 
@@ -130,15 +131,17 @@ ul, li{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    color: white;
+
 
 }
 .headerNavBoton:hover{
     background-color: #1358a3;
 }
 
-.headerNavBoton a{
+/* .headerNavBoton a{
     color: #fff;
-}
+} */
 
 #icon-menu{
     width: 50px;
@@ -547,7 +550,6 @@ padding: 9px;
 /*Página de Generos*/
 .seccionGeneros{
     min-height: 60vh;/*Acomodo de footer*/
-
 }
 
 .tituloGenero{
@@ -672,27 +674,29 @@ body.modoOscuro {
 
 /*Respondive Design: adaptable a dispositivos moviles mediaQuery*/
 @media(max-width:420px){
-    body{
-        max-width: 420px;
-    }
-
-    .mainContenedor{
-        min-height: 60vh;
+    
+    .headerSeccionPrimeraParte{
+        height: 50vh;
     }
     .headerArticleLogo img{
         border-radius: 100%;
-        width: 67px;
-        height: 22vh;
-        padding: 3px;
-    }
-
-    .headerArticleLogo{
-        width: 57%;
-        height: 24vh;
+        width: 41px;
+        height: 15vh;
     }
     .headerNavUl{
-        flex-direction: column;
+        margin: 0px;
+        order:4;
     }
+
+    .articleModoOscuro{
+        width: 20vw;
+        margin:0;
+    }
+    .headerArticleLogo{
+        height: 15vh;
+        width: 16vw;
+    }
+   
     .headerNavBoton{
         padding: 10px;
         height: 22px;
@@ -700,11 +704,16 @@ body.modoOscuro {
     }
 
     #botonBusqueda{
-        margin-right: 3px;
+        width: 10vw;
+        height: 11vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .uk-slider-items:not(.uk-grid) {
-        width: 47%;
+    #searchInput{
+        width: 30vw;
+        height: 11vh;
     }
 
     .titulages{

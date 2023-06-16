@@ -26,8 +26,8 @@
                 <article class="headerArticleLogo">
                     <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
                 </article>
-                <!--FOTO DE MODO OSCURO-->    
-                               
+
+                <!--BOTON DE MODO OSCURO-->                   
                 <article class="articleModoOscuro">
                     <button class="border" id="modeToggle">Modo oscuro</button>
                 </article>
@@ -35,9 +35,10 @@
                 
                 
                 <ul class="headerNavUl">
-                    <li class="headerNavBoton"> <a class="linkBoton" href="./home.html">Home</a></li>
-                    <li class="headerNavBoton"> <a class="linkBoton" href="./playlist.html">Playlist</a></li>
-                    <li class="headerNavBoton"> <a class="linkBoton" href="./generos.html">Generos</a></li>
+                    <a class="headerNavBoton" href="./home.html"> <li class="linkBoton">Home</li></a>
+                    <a class="headerNavBoton" href="./playlist.html"> <li class="linkBoton">Playlist</li></a>
+                    <a class="headerNavBoton" href="./generos.html"> <li class="linkBoton">Generos</li></a>
+
                 </ul>
                 
                   
@@ -49,12 +50,6 @@
                     </form>
                 </article>
                 
-                <!-- <article id =icon-menu> 
-                    <i class="fa-solid fa-bars">hhh</i>
-
-                </article> -->
-
-        
             </section>
 
         </nav>
@@ -128,12 +123,15 @@
         </footer>
         
     </section>
-    <!--Vincular con el javascript correspondiente-->
-    <script type="text/javascript" src="./js/home.js"></script>
+ 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/js/uikit-icons.min.js"></script>
+
+   <!--Vincular con el javascript correspondiente-->
+    <script type="text/javascript" src="./js/home.js"></script>
+    <script src="./js/modoOscuro.js"></script>
 </body>
 
 </html>

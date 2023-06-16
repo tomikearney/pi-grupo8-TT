@@ -1,3 +1,4 @@
+
 /******************** FORMULARIO ******************************/
 
 let form = document.querySelector("#buscadorForm");

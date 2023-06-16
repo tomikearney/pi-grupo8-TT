@@ -13,8 +13,8 @@ fetch(urlGeneros)
 
     .then(function(data) {
 
-      let titleGenero = document.querySelector(".titleGenero");
-      titleGenero.innerText = data.name;
+      let frasesPage = document.querySelector(".frasesPage");
+      frasesPage.innerText = data.name;
     })
     .catch(function (error) {
       console.log(`Error:${error}`);

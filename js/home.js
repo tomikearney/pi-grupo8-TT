@@ -1,96 +1,96 @@
 
-/*FUNCIONALIDAD MODO OSCURO*/
+// /*FUNCIONALIDAD MODO OSCURO*/
 
-let modeToggle = document.querySelector("#modeToggle");
+// let modeToggle = document.querySelector("#modeToggle");
 
-function pasarAModoOscuro(){ //Transforma todo a modo oscuro
+// function pasarAModoOscuro(){ //Transforma todo a modo oscuro
      
-     let footer = document.querySelector(".footer");
-     let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
-     let frasesPage = document.querySelector(".frasesPage");
-     let body = document.querySelector("body");
+//      let footer = document.querySelector(".footer");
+//      let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
+//      let frasesPage = document.querySelector(".frasesPage");
+//      let body = document.querySelector("body");
      
-     let h2Node = document.querySelectorAll("h2");
-     let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
-     let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
-     let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+//      let h2Node = document.querySelectorAll("h2");
+//      let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
+//      let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
+//      let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
 
-     for (let i = 0; i < headerNavBotonArray.length; i++) {
-          headerNavBotonArray[i].style.backgroundColor = "dimgrey";
-     }
+//      for (let i = 0; i < headerNavBotonArray.length; i++) {
+//           headerNavBotonArray[i].style.backgroundColor = "dimgrey";
+//      }
 
-     for (let i = 0; i < h2Array.length; i++) {
-          h2Array[i].style.color = "white"
-     }    
+//      for (let i = 0; i < h2Array.length; i++) {
+//           h2Array[i].style.color = "white"
+//      }    
           
-     footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
-     headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
-     body.style.backgroundColor = "#191919fa"
+//      footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
+//      headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
+//      body.style.backgroundColor = "#191919fa"
 
-     frasesPage.style.color = "white"  
+//      frasesPage.style.color = "white"  
 
-     //modeToggle.style.backgroundImage = "url('../img/lightbulbpasarAModoClaro.png')"
-     modeToggle.innerText = "Modo claro"
-}
+//      //modeToggle.style.backgroundImage = "url('../img/lightbulbpasarAModoClaro.png')"
+//      modeToggle.innerText = "Modo claro"
+// }
 
-function pasarAModoClaro(){ //Transforma todo a modo claro
-     let footer = document.querySelector(".footer");
-     let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
-     let frasesPage = document.querySelector(".frasesPage");
-     let body = document.querySelector("body");
+// function pasarAModoClaro(){ //Transforma todo a modo claro
+//      let footer = document.querySelector(".footer");
+//      let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
+//      let frasesPage = document.querySelector(".frasesPage");
+//      let body = document.querySelector("body");
      
-     let h2Node = document.querySelectorAll("h2");
-     let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
-     let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
-     let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+//      let h2Node = document.querySelectorAll("h2");
+//      let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
+//      let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
+//      let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
 
-     for (let i = 0; i < headerNavBotonArray.length; i++) {
-          headerNavBotonArray[i].style.backgroundColor = "rgb(0, 61, 123)";
-          }
+//      for (let i = 0; i < headerNavBotonArray.length; i++) {
+//           headerNavBotonArray[i].style.backgroundColor = "rgb(0, 61, 123)";
+//           }
      
-          for (let i = 0; i < h2Array.length; i++) {
-               h2Array[i].style.color = "black"
-          }
+//           for (let i = 0; i < h2Array.length; i++) {
+//                h2Array[i].style.color = "black"
+//           }
 
 
           
-     footer.style.backgroundColor = "rgb(0, 61, 123)";
-     headerSeccionPrimeraParte.style.backgroundColor = "rgb(0, 61, 123)";
-     body.style.backgroundColor = "#ffff"
+//      footer.style.backgroundColor = "rgb(0, 61, 123)";
+//      headerSeccionPrimeraParte.style.backgroundColor = "rgb(0, 61, 123)";
+//      body.style.backgroundColor = "#ffff"
 
-     frasesPage.style.color = "black"  
+//      frasesPage.style.color = "black"  
 
-     modeToggle.innerText = "Modo oscuro"
-}
+//      modeToggle.innerText = "Modo oscuro"
+// }
 
 
+// /*Determinar que modo está guardado en el storage*/
+// let modoActual = localStorage.getItem("modo"); //Traigo modo establecido actualmente
+// console.log(modoActual);
+// if (modoActual == "modo oscuro") {
+//      pasarAModoOscuro()
+// }
+// else if (modoActual == null) { //Si no había ningún modo establecido
+//      modoActual = "modo claro"
+// } //Si estaba guardado el modo oscuro
 
-/*Determinar que modo está guardado en el storage*/
-let modoActual = localStorage.getItem("modo"); //Traigo modo establecido actualmente
+// localStorage.setItem("modo", modoActual)
 
-if (modoActual == "modo oscuro") {
-     pasarAModoOscuro()
-}
-else if (modoActual == null) { //Si no había ningún modo establecido
-     modoActual = "modo claro"
-} //Si estaba guardado el modo oscuro
+// /*Evento cuando el usuario toca para cambiar de modo*/
+// modeToggle.addEventListener("click", function() {
+//      let modoActual = localStorage.getItem("modo"); //Traigo modo establecido actualmente
 
-localStorage.setItem("modo", modoActual)
+//      if(modoActual == "modo claro"){ //Si el modo está en claro, va a pasar a oscuro
+//           localStorage.setItem("modo", "modo oscuro")
+//           pasarAModoOscuro()
+//      }
+//      else { //Si el modo está oscuro, va a pasar a claro
+//           localStorage.setItem("modo", "modo claro")
+//           pasarAModoClaro()
+//      }
 
-/*Evento cuando el usuario toca para cambiar de modo*/
-modeToggle.addEventListener("click", function() {
-     let modoActual = localStorage.getItem("modo"); //Traigo modo establecido actualmente
+// });
 
-     if(modoActual == "modo claro"){ //Si el modo está en claro, va a pasar a oscuro
-          localStorage.setItem("modo", "modo oscuro")
-          pasarAModoOscuro()
-     }
-     else { //Si el modo está oscuro, va a pasar a claro
-          localStorage.setItem("modo", "modo claro")
-          pasarAModoClaro()
-     }
-
-});
 
 
 
