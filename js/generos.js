@@ -42,19 +42,4 @@ fetch(urlgeneros)
         return error;
     });
 
-/************************ MENU RESPONSIVIDAD ***********************************/ 
-
-/*RESPONSIVIDAD: Le agregamos un evento al icono de menu de Home*/
-     //capturo el elemento del DOM
-     let botonMenu= document.querySelector("#icon-menu");
-     //Le doy un evento "click", y una funcion (una callback)
-     botonMenu.addEventListener("click", function () {
-          
-          let containerAll= document.querySelector("#moveContent") 
-               containerAll.classList.toggle("moveContainerAll") //se creo una clase en style imaginaria, para luego usarla acá.
-          //El contenido ya se mueve!
-
-          let menuAparecer = document.querySelector("#showMenu")
-               menuAparecer.classList.toggle("showLateral")
-     }); 
 

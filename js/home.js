@@ -97,8 +97,8 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                seccionCanciones.innerHTML += 
                                              `<li>
                                                   <div class="uk-position-center uk-panel">
-                                                       <a href="./detallesCancion.html?id=${canciones[i].id}"><h3>${canciones[i].title}</h3></a>
-                                                       <h6>${canciones[i].artist.name}</h6>
+                                                       <a href="./detallesCancion.html?id=${canciones[i].id}"><h3 class="titulages">${canciones[i].title}</h3></a>
+                                                       <h6 class="nameArtista">${canciones[i].artist.name}</h6>
 
                                                   </div>
                                                   <a href="./detallesArtista.html?id=${artists[i].id}">
@@ -111,7 +111,7 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
           for (let i = 0; i < 5; i++) {
                seccionArtistas.innerHTML += `<li>
                                                   <div class="uk-position-center uk-panel">
-                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h3>${artists[i].name}</h3></a>
+                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h3 class="nameArtista">${artists[i].name}</h3></a>
                                                   </div>
                                                   <a href="./detallesArtista.html?id=${artists[i].id}">
                                                        <img src="${artists[i].picture_medium}" width="400" height="600" alt="">
@@ -127,8 +127,8 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                seccionAlbums.innerHTML += 
                                              `<li>
                                                   <div class="uk-position-center uk-panel">
-                                                       <a href="./detallesDisco.html?id=${albums[i].id}"><h3>${canciones[i].title}</h3></a>
-                                                       <h6>${albums[i].artist.name}</h6>
+                                                       <a href="./detallesDisco.html?id=${albums[i].id}"><h3 class="titulages">${canciones[i].title}</h3></a>
+                                                       <h6 class="nameArtista">${albums[i].artist.name}</h6>
 
                                                   </div>
                                                   <a href="./detallesArtista.html?id=${artists[i].id}">
@@ -160,22 +160,4 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
          }
      })
 
-
-/************************ MENU RESPONSIVIDAD ***********************************/ 
-
-/*RESPONSIVIDAD: Le agregamos un evento al icono de menu de Home*/
-     //capturo el elemento del DOM
-     let botonMenu= document.querySelector("#icon-menu");
-     //Le doy un evento "click", y una funcion (una callback)
-     botonMenu.addEventListener("click", function () {
-          
-          let containerAll= document.querySelector("#moveContent") 
-               containerAll.classList.toggle("moveContainerAll") //se creo una clase en style imaginaria, para luego usarla acá.
-          //El contenido ya se mueve!
-
-          let menuAparecer = document.querySelector("#showMenu")
-               menuAparecer.classList.toggle("showLateral")
-     }); 
-
-     //let botonMenu= document.querySelector("")
 

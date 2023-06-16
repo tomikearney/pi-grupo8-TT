@@ -26,6 +26,7 @@ ul, li{
     font-size: 13px;
 }
 
+
 /*headerSeccionLogo*/
 .header{
   width: 100%;
@@ -34,7 +35,8 @@ ul, li{
 }
 
 .headerSeccionPrimeraParte{
-    height: 20vh;
+    width: 100%;
+    height: 25vh;
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
@@ -105,31 +107,31 @@ ul, li{
     font-style: italic;
 }
 /*headerSeccionNav*/
-.headerSeccionNav{
-    border-top: solid 1px gray;
-    width: 100%;
-    height: 10vh;
-    background-color: rgb(0, 61, 123);
-    padding: 0px 20px; 
-}
 
 .headerNavUl{
     width: 100%;
-    height: 10vh;
+    /* height: 10vh; */
+    min-height: 18vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0px;
 }
 
 .headerNavBoton{
-    font-size: 25px;
-    background-color: rgb(102, 134, 208);
-    border-radius: 5px;
-    padding: 2px;
+    border-radius: 2px;
+    /* padding: 0px; */
     box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
     cursor: pointer;
+    height: 5vh;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
 }
 .headerNavBoton:hover{
     background-color: #1358a3;
@@ -137,6 +139,7 @@ ul, li{
 
 .headerNavBoton a{
     color: #fff;
+    text-align: center;
 }
 
 #icon-menu{
@@ -635,130 +638,71 @@ padding: 9px;
     body{
         max-width: 420px;
     }
-    /*header*/
-    .headerArticleLogo img{
-        border-radius: 100%;
-    }
 
-    nav{
-        width: 0px; /*200px para que aparezca el menu */
-        height:100vh;
-        position: fixed;
-        top: 80px;
-        left:0;
-        background-color: #fff;
-        overflow: hidden;
-        transform: translateX(-350px);
-        box-shadow: 10px 0 20px -25px back;
-
-    }
-
-    .showLateral{ /*clase imaginaria y lo vemos con js*/
-        width: 200px;
-        transform: translateX(0px);
-    } /*PREGUNTAR MAÑANA*/
-    
-    .headerNavUl{
-        flex-direction: column;
-        height: 100vh;
-        padding: 10px;
-        align-items: flex-start;
-
-    }
-
-    .headerNavUl li{
-        max-width: 200px;
-        justify-content: center;
-    }
-
-    .headerNavUl li a{
-        width: 20px;
-        border-radius: 0%;
-        
-    }
-
-    .headerNavBoton{
-        font-size: 25px;
-        background-color: #fff;
-        border-radius: 0px;
-        padding: 1px;
-        box-shadow:0px;
-        cursor: pointer;
-    }
-
-    .headerNavBoton a{ 
-       border-radius:0;
-       color:#000;
-    }
-
-    #icon-menu{
-        display: flex; /*aparece lcono del menu*/
-    }
-
-    /*Se crea una animación*/
-    .containerAll{
-        transition:all 300ms; /*se mueve más lento al presionar el boton de menu*/
-    }
-    
-    .moveContainerAll{/*se aplica la clase cuando en medio de un evento en js*/ 
-        /*cuando se Apreta el boton de menu hay una pequeña traslacion en el eje X para que se muestre el menu*/
-        transform:translateX(200px); 
-    }
-
-
-    /*main*/
     main{
         min-height: 60vh;
     }
-    
-    .sectionTitulo{
-    justify-content: center;
+    .headerArticleLogo img{
+        border-radius: 100%;
+        width: 67px;
+        height: 22vh;
+        padding: 3px;
     }
 
-    .mainSection{
+    .headerArticleLogo{
+        width: 57%;
+        height: 24vh;
+    }
+    .headerNavUl{
         flex-direction: column;
-        background-color: #f1f1f1;
     }
-    
-    .articleMain{
-        flex-direction: row;
-        height: 126px;
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    
-    .articleMain a{
-        text-align: left;
+    .headerNavBoton{
+        padding: 10px;
+        height: 22px;
+        width: 70px;    
     }
 
-    #discosSeccion .articleMain{
-        flex-direction: row;
-        height: 126px;
-        width: 100%;
+    #botonBusqueda{
+        margin-right: 3px;
     }
-    
-    .mainSections .title{
-        overflow: hidden;
-        /*no se cambia el tamaño de letra de un album*/       
+
+    .uk-slider-items:not(.uk-grid) {
+        width: 47%;
+    }
+
+    .titulages{
+        font-size: 15px;
+    }
+
+    .nameArtista{
+        font-size: 16px;
+        padding: 0px;
+        
     }
 
     /*footer*/
-    footer{
-        max-width: 420px;
+    .footer{
+        margin-top:5px ;
+        height: 32vh;
+    
     }
 
+    #footerArticleLogo{
+        width: 8%;
+    }
     .footerImgLogo{
         border-radius: 100%;
-        margin-right: 90px;
+        margin-right: 54px;
 
     }
 
     .footerSeccionNav{
         flex-direction: column;
+        padding: 0%;
     }
     .footerLi{
         padding: 5px;
-    }
+    } 
 }
 
 /*Modo Oscuro*/

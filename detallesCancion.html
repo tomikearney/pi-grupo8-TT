@@ -14,82 +14,81 @@
 <body>
     <!-------------------------------------Header--------------------------------------->
     <header class="header">
-        <section class="headerSeccionPrimeraParte">
+        <nav>
+            <section class="headerSeccionPrimeraParte">
+                <article class="headerArticleLogo">
+                    <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
+                </article>
 
-            <article class="headerArticleLogo">
-                <a href="./home.html"><img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo"></a>
-            </article>
+                <!-- Es para la funcionalidad del modo oscuro
+                <article class="articleModoOscuro">
+                    <span>Modo oscuro</span>
+                </article>
+                -->
+                
+                <ul class="headerNavUl">
+                    <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                    <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                    <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                </ul>
+                
+                <!--FOTO DE MODO OSCURO-->    
+                <!------------------------->   
+                <article class="headerArticleForm">
+                    <form action="./searchResults.html" method="get" id="buscadorForm">
+                        <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
+                        <button id="botonBusqueda" type="submit"><i
+                                class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                    </form>
+                </article>
+                
+                <article id =icon-menu> <!--con js le damos el evento-->
+                    <i class="fa-solid fa-bars"></i>
 
-     <!--FOTO DE MODO OSCURO-->    
-     <!------------------------->   
-            <article class="headerArticleForm">
-                <form action="./searchResults.html" method="get" id="buscadorForm" >
-                    <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
-                    <button id="botonBusqueda" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
-                </form>
-            </article>
-
-        </section>
-
-        <section class="headerSeccionNav">
-            
-            <section id =icon-menu> <!--con js le damos el evento-->
-                <i class="fa-solid fa-bars"></i>
-            </section>
-            
-            <section class="menu" id="showMenu">
+                </article>
 
         
-                <nav>
-                    <ul class="headerNavUl">
-                        <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
-                        <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
-                        <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
-                    </ul>
-                    
-                </nav>
-            </section>   
-        </section>
+            </section>
+
+        </nav>
     </header>
 
     <!------------------------------------MAIN------------------------------->
     <section class="containerAll" id="moveContent">
 
-    <main>
-        <section id="detallesSongs" class="sectionDetallesCancion">
-            <article class="articleDetallesSongs">
-                <h2 class="nameSongs"></h2>
-                <img class="imgTapaDisco" src="" alt="">
-                <p class="artistaSong styleName">Cantante:</p>
-                <p class="albumSongs styleName">Album:</p>
-            </article>
+        <main>
+            <section id="detallesSongs" class="sectionDetallesCancion">
+                <article class="articleDetallesSongs">
+                    <h2 class="nameSongs"></h2>
+                    <img class="imgTapaDisco" src="" alt="">
+                    <p class="artistaSong styleName">Cantante:</p>
+                    <p class="albumSongs styleName">Album:</p>
+                </article>
 
-            <article class="articleDetallesSongsInfoAdicional">
-                 <ul class="datosCancion">
-                    <li> <p class="duracionCancion"> Duracion: </p></li> 
-                    <li> <p class="lanzamiento"> Fecha de Lanzamiento: </p></li> 
-                    <li><p class="explicitSong"></p></li>
-                 </ul>
-                 
-                <div id="previewSong">
-                    <audio id="previewAudio" controls> <!--Este artibuto: Controls permite al usuario subir volumen,bajar volumen,etc -->
-                        Your browser does not support the audio element.
-                                     <!-- Este texto se muestra si el navegador del usuario no admite el elemento de audio. Es una forma de proporcionar un mensaje alternativo en caso de que el navegador no pueda reproducir audio. -->
-                    </audio>
-                </div> 
-
-                <ul class="btnsDetallesCanciones">
-                    <li><button id="agregarAMiPlaylist" ><h3 class="btnName"> Agregar a mi playlist</h3></button></li>
+                <article class="articleDetallesSongsInfoAdicional">
+                    <ul class="datosCancion">
+                        <li> <p class="duracionCancion"> Duracion: </p></li> 
+                        <li> <p class="lanzamiento"> Fecha de Lanzamiento: </p></li> 
+                        <li><p class="explicitSong"></p></li>
+                    </ul>
                     
-                    <li><button class="irAMiPlaylist"><a href="./playlist.html">Ir a mi playlist</a></button></li></ul>
+                    <div id="previewSong">
+                        <audio id="previewAudio" controls> <!--Este artibuto: Controls permite al usuario subir volumen,bajar volumen,etc -->
+                            Your browser does not support the audio element.
+                                        <!-- Este texto se muestra si el navegador del usuario no admite el elemento de audio. Es una forma de proporcionar un mensaje alternativo en caso de que el navegador no pueda reproducir audio. -->
+                        </audio>
+                    </div> 
+
+                    <ul class="btnsDetallesCanciones">
+                        <li><button id="agregarAMiPlaylist" ><h3 class="btnName"> Agregar a mi playlist</h3></button></li>
                         
-                </ul>
-       </article>
-               
-           
-        </section>
-    </main>
+                        <li><button class="irAMiPlaylist"><a href="./playlist.html">Ir a mi playlist</a></button></li></ul>
+                            
+                    </ul>
+                </article>
+            
+            </section>
+        </main>
 
 
 
@@ -106,6 +105,7 @@
         
     </footer>
 </section>
+
     <!--Vincular con el javascript correspondiente-->
     <script type="text/javascript" src="./js/detallesCancion.js"></script>
 </body>
