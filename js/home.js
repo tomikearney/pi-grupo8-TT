@@ -1,10 +1,9 @@
 
-//FUNCIONALIDAD MODO OSCURO
-/*Declaro variables necesarias*/
+/*FUNCIONALIDAD MODO OSCURO*/
 
-let modeToggle =document.querySelector("#modeToggle");
+let modeToggle = document.querySelector("#modeToggle");
 
-function modoOscuro(){
+function pasarAModoOscuro(){ //Transforma todo a modo oscuro
      
      let footer = document.querySelector(".footer");
      let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
@@ -16,24 +15,25 @@ function modoOscuro(){
      let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
      let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
 
-        for (let i = 0; i < headerNavBotonArray.length; i++) {
+     for (let i = 0; i < headerNavBotonArray.length; i++) {
           headerNavBotonArray[i].style.backgroundColor = "dimgrey";
-          }
-     
-          for (let i = 0; i < h2Array.length; i++) {
-               h2Array[i].style.color = "white"
-          }
+     }
 
-       
+     for (let i = 0; i < h2Array.length; i++) {
+          h2Array[i].style.color = "white"
+     }    
           
      footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
      headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
      body.style.backgroundColor = "#191919fa"
 
      frasesPage.style.color = "white"  
+
+     //modeToggle.style.backgroundImage = "url('../img/lightbulbpasarAModoClaro.png')"
+     modeToggle.innerText = "Modo claro"
 }
 
-function modoClaro(){
+function pasarAModoClaro(){ //Transforma todo a modo claro
      let footer = document.querySelector(".footer");
      let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
      let frasesPage = document.querySelector(".frasesPage");
@@ -59,31 +59,44 @@ function modoClaro(){
      body.style.backgroundColor = "#ffff"
 
      frasesPage.style.color = "black"  
+
+     modeToggle.innerText = "Modo oscuro"
 }
 
-let articleModoOscuro = document.querySelector("#modeToggle");
-articleModoOscuro.addEventListener("click", function() {
-     let modo = localStorage.getItem("modo");
-     
-     if(modo == null || modo == "Modo claro"){ //Si el modo está en claro
-          articleModoOscuro.innerText = "Modo claro"
-          localStorage.setItem("modo", "modo oscuro")
-          modoOscuro()
 
+
+/*Determinar que modo está guardado en el storage*/
+let modoActual = localStorage.getItem("modo"); //Traigo modo establecido actualmente
+
+if (modoActual == "modo oscuro") {
+     pasarAModoOscuro()
+}
+else if (modoActual == null) { //Si no había ningún modo establecido
+     modoActual = "modo claro"
+} //Si estaba guardado el modo oscuro
+
+localStorage.setItem("modo", modoActual)
+
+/*Evento cuando el usuario toca para cambiar de modo*/
+modeToggle.addEventListener("click", function() {
+     let modoActual = localStorage.getItem("modo"); //Traigo modo establecido actualmente
+
+     if(modoActual == "modo claro"){ //Si el modo está en claro, va a pasar a oscuro
+          localStorage.setItem("modo", "modo oscuro")
+          pasarAModoOscuro()
      }
-     else { //Si el modo está oscuro
-          articleModoOscuro.innerText = "Modo oscuro"
-          localStorage.setItem("modo", "Modo claro")
-          modoClaro()
+     else { //Si el modo está oscuro, va a pasar a claro
+          localStorage.setItem("modo", "modo claro")
+          pasarAModoClaro()
      }
 
 });
 
-//se creo dos funciones una de modo oscuro y otra modo clar --> CONTINUAR
 
 
 
-//Trayendo datos de api
+/*TRAYENDO DATOS DE API*/
+
 let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
 let endpoint ="https://api.deezer.com/chart"; /*Es la ruta que proporciona la informacion a renderizar*/
 
