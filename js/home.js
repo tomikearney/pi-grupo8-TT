@@ -1,6 +1,8 @@
-/*
 
 //FUNCIONALIDAD MODO OSCURO
+/*Declaro variables necesarias*/
+
+let modeToggle =document.querySelector("#modeToggle");
 
 function modoOscuro(){
      
@@ -8,31 +10,58 @@ function modoOscuro(){
      let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
      let frasesPage = document.querySelector(".frasesPage");
      let body = document.querySelector("body");
-
-     let h2Node = document.querySelectorAll("h2")
+     
+     let h2Node = document.querySelectorAll("h2");
      let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
      let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
      let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
 
+        for (let i = 0; i < headerNavBotonArray.length; i++) {
+          headerNavBotonArray[i].style.backgroundColor = "dimgrey";
+          }
+     
+          for (let i = 0; i < h2Array.length; i++) {
+               h2Array[i].style.color = "white"
+          }
 
+       
+          
      footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
      headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
      body.style.backgroundColor = "#191919fa"
 
-     frasesPage.style.color = "white"
-
-
-     for (let i = 0; i < headerNavBotonArray.length; i++) {
-          headerNavBotonArray[i].style.backgroundColor = "dimgrey"
-     }
-
-     for (let i = 0; i < h2Array.length; i++) {
-          h2Array[i].style.color = "white"
-     }
-
+     frasesPage.style.color = "white"  
 }
 
-let articleModoOscuro = document.querySelector(".articleModoOscuro");
+function modoClaro(){
+     let footer = document.querySelector(".footer");
+     let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
+     let frasesPage = document.querySelector(".frasesPage");
+     let body = document.querySelector("body");
+     
+     let h2Node = document.querySelectorAll("h2");
+     let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
+     let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
+     let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+
+     for (let i = 0; i < headerNavBotonArray.length; i++) {
+          headerNavBotonArray[i].style.backgroundColor = "rgb(0, 61, 123)";
+          }
+     
+          for (let i = 0; i < h2Array.length; i++) {
+               h2Array[i].style.color = "black"
+          }
+
+
+          
+     footer.style.backgroundColor = "rgb(0, 61, 123)";
+     headerSeccionPrimeraParte.style.backgroundColor = "rgb(0, 61, 123)";
+     body.style.backgroundColor = "#ffff"
+
+     frasesPage.style.color = "black"  
+}
+
+let articleModoOscuro = document.querySelector("#modeToggle");
 articleModoOscuro.addEventListener("click", function() {
      let modo = localStorage.getItem("modo");
      
@@ -45,20 +74,12 @@ articleModoOscuro.addEventListener("click", function() {
      else { //Si el modo está oscuro
           articleModoOscuro.innerText = "Modo oscuro"
           localStorage.setItem("modo", "Modo claro")
+          modoClaro()
      }
-
-
-     
 
 });
 
-
-
-
-*/
-
-
-
+//se creo dos funciones una de modo oscuro y otra modo clar --> CONTINUAR
 
 
 
