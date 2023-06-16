@@ -5,7 +5,6 @@
 }
 
 body{
-    /*background-image: url(../img/fondo.jpeg);*/
     border: 0;
     padding: 0;
     width: 100%;
@@ -17,7 +16,6 @@ a{
 }
 p{
     text-decoration: none;
-    color: #000;
 }
 ul, li{
     list-style-type: none;
@@ -138,28 +136,6 @@ ul, li{
     background-color: #1358a3;
 }
 
-/* .headerNavBoton a{
-    color: #fff;
-} */
-
-#icon-menu{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    font-size: 25px;
-    background: #fafafafa;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 150px;
-    margin-top: 4px;
-    display: none; /*cambiar en mq*/
-}
-#icon-menu:hover{
-    opacity: 0.8;
-}
 /*footerSeccionNav*/
 .footer{
     display: flex;
@@ -227,32 +203,6 @@ main{
     text-align: center;
 }
 
-
-
-/*Para acomodar unicamente la seccion del disco*/
-/*--------------
-#discosSeccion .mainSection{
-    height: 281px;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-#discosSeccion .articleMain{
-    height: 281px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 61, 123, 0.241);
-}
-
-#discosSeccion .articleMain img {
-    height: 88px;
-    width: 95px;
-}
-----------------*/
-
 /*------------------------------*/
 
 .articleMain{
@@ -303,21 +253,6 @@ main{
     white-space: pre-wrap;
 } 
   
-/*seccion canciones*/
-h6{
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-}
-
-
-.verMas{
-    font-size: 16px;
-    margin-top: 7px;
-    background-color: rgb(102, 134, 208);
-    padding: 5px;
-    cursor: pointer;
-}
 
 /*Detalle Canciones */
 .sectionDetallesCancion{
@@ -393,7 +328,6 @@ max-width: 650px;
 #agregarAMiPlaylist{
     background: rgb(102, 134, 208);
     border-radius: 11px;
-    color: black;
     display: flex;
     font-size: 18px;
     padding: 6px;
@@ -403,7 +337,6 @@ max-width: 650px;
 .irAMiPlaylist{
     background: rgb(102, 134, 208);
     border-radius: 11px;
-    color: black; 
     display: flex;
     font-size: 18px;
     padding: 6px;
@@ -415,7 +348,6 @@ max-width: 650px;
     min-height: 60vh; /*de esta forma el footer se va al final de la pagina y a medida que se aumenta contenido se va aconomodando*/
 }
 .TituloPagePlaylist{
-    color: rgb(0, 61, 123) ;
     font-style: italic;
     font-size: 30px;
     text-align: center;
@@ -473,7 +405,6 @@ max-width: 650px;
     padding: 15px;
 }
 .listaAlbumesArtista li{
-    /* list-style-type: numerica;  debate*/
     margin-left: 9px;
     padding: 9px;
     font-weight: bolder;
@@ -522,7 +453,6 @@ padding: 9px;
 }
 
 .cancionAlbumH4{
-    color: rgb(0, 61, 123) ;
     font-weight: bolder;
     font-size: 20px;
     padding-bottom: 5px;
@@ -655,13 +585,7 @@ body.modoOscuro {
 }
 
 #modeToggle{
-    /*background-image: url('../img/lightbulbpasarAModoOscuro.png'); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 50px;
-    height: 40px;
-    border: none;
-    padding: 31px;*/
+
     cursor: pointer;
 }
 

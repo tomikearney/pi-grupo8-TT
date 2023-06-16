@@ -1,3 +1,4 @@
+/*ACLARACIÓN: brian hablamos en clase y nos dijiste que como el uikit nos estaba modificando todos los estilos lo dejemos así*/
 
 /*FUNCIONALIDAD MODO OSCURO*/
 
@@ -12,11 +13,14 @@ function pasarAModoOscuro(){ //Transforma todo a modo oscuro
      let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
      let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
 
+     let html = document.querySelector(":root");
+
      for (let i = 0; i < headerNavBotonArray.length; i++) {
           headerNavBotonArray[i].style.backgroundColor = "dimgrey";
      }
 
-     
+     html.style.color = '#fff';
+
           
      footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
      headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
@@ -34,14 +38,15 @@ function pasarAModoClaro(){ //Transforma todo a modo claro
      let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
      let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
 
+     let html = document.querySelector(":root");
+
      for (let i = 0; i < headerNavBotonArray.length; i++) {
           headerNavBotonArray[i].style.backgroundColor = "rgb(0, 61, 123)";
           }
      
-
-
-
-          
+     
+     html.style.color = '#000';
+     
      footer.style.backgroundColor = "rgb(0, 61, 123)";
      headerSeccionPrimeraParte.style.backgroundColor = "rgb(0, 61, 123)";
      body.style.backgroundColor = "#ffff"

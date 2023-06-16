@@ -1,3 +1,24 @@
+/******************** FORMULARIO ******************************/
+
+let form = document.querySelector("#buscadorForm");
+let campoBuscador = document.querySelector("#searchInput");
+    form.addEventListener ("submit", function(e){
+        e.preventDefault();
+        console.log(campoBuscador.value)
+        if(campoBuscador.value == ''){
+            alert('Debe ingresar alguna palabra');
+        } else if (campoBuscador.value.length < 3){
+            alert('Ingresar al menos 3 caracteres');
+            console.log(campoBuscador.value)
+        } else{
+            this.submit();
+        }
+    })
+
+  
+/******************** TRAYENDO DATOS DE LA API ******************************/
+
+
 let queryString = location.search;
 let queryStringObj= new URLSearchParams(queryString);
 let id = queryStringObj.get("id"); //MODIFICACION DE ENDPOINTS
@@ -13,8 +34,8 @@ fetch(urlGeneros)
 
     .then(function(data) {
 
-      let frasesPage = document.querySelector(".frasesPage");
-      frasesPage.innerText = data.name;
+      let tituloGenero = document.querySelector(".tituloGenero");
+      tituloGenero.innerText = data.name;
     })
     .catch(function (error) {
       console.log(`Error:${error}`);
@@ -46,21 +67,7 @@ fetch(urlArtistasForAGenre) // esta url nos da todos los artistas pertenecientes
     console.log(`Error:${error}`);
   }); 
  
-/************************ MENU RESPONSIVIDAD ***********************************/ 
 
-/*RESPONSIVIDAD: Le agregamos un evento al icono de menu de Home*/
-     //capturo el elemento del DOM
-     let botonMenu= document.querySelector("#icon-menu");
-     //Le doy un evento "click", y una funcion (una callback)
-     botonMenu.addEventListener("click", function () {
-          
-          let containerAll= document.querySelector("#moveContent") 
-               containerAll.classList.toggle("moveContainerAll") //se creo una clase en style imaginaria, para luego usarla acá.
-          //El contenido ya se mueve!
-
-          let menuAparecer = document.querySelector("#showMenu")
-               menuAparecer.classList.toggle("showLateral")
-     }); 
 
 
 
