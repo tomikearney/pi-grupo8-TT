@@ -52,7 +52,6 @@ ul, li{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* background-color: green; */
 }
 
 .headerImgLogo{
@@ -135,9 +134,31 @@ ul, li{
     color: #fff;
 }
 
+#icon-menu{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    font-size: 25px;
+    background: #fafafafa;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 150px;
+    margin-top: 4px;
+    display: none; /*cambiar en mq*/
+}
+#icon-menu:hover{
+    opacity: 0.8;
+}
 /*footerSeccionNav*/
 .footer{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
     height: 16vh;
     background-color: rgb(0, 61, 123);
 
@@ -164,6 +185,7 @@ ul, li{
 }
 
 .footerImgLogo{
+    
     width: 61px;
     height: 56px;
     margin-right: 31px;
@@ -521,13 +543,13 @@ padding: 9px;
 
 }
 
-.tituloGeneros{
+.tituloGenero{
  text-align: center;
  padding: 20px;
  font-size: 27px;
 }
 
-.articleGeneros{
+.divGeneros{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -536,7 +558,7 @@ padding: 9px;
     padding: 3px;
 }
 
-.listaGeneros{
+.articleGenerosMusicales{ 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -559,5 +581,166 @@ padding: 9px;
 .aClickeo:hover{
     background-color: #1d65b1;
 }
-/*mediaQuery*/
+
+
+/*Detalle Generos*/
+#mainGeneroDetalles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listaForGeneros{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.listaForGeneros li{
+    margin: 2px;
+
+}
+
+.listaForGeneros li:hover{
+    background-color: #f1f1f1;
+}
+
+.listaForGeneros img{
+    width: 15%;
+    border-color: transparent;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.nameSinger{
+    color: #000;
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*Respondive Design: adaptable a dispositivos moviles mediaQuery*/
+@media(max-width:420px){
+    body{
+        max-width: 420px;
+    }
+    /*header*/
+    .headerArticleLogo img{
+        border-radius: 100%;
+    }
+
+    nav{
+        width: 0px; /*200px para que aparezca el menu */
+        height:32vh;
+        position: fixed;
+        top: 80px;
+        left:0;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 10px 0 20px -25px back;
+
+    }
+
+    .headerNavUl{
+        flex-direction: column;
+        height: 32vh;
+        padding: 10px;
+        align-items: flex-start;
+
+    }
+
+    .headerNavUl li{
+        max-width: 200px;
+        justify-content: center;
+    }
+
+    .headerNavUl li a{
+        width: 20px;
+        border-radius: 0%;
+        
+    }
+
+    .headerNavBoton{
+        font-size: 25px;
+        background-color: #fff;
+        border-radius: 0px;
+        padding: 1px;
+        box-shadow:0px;
+        cursor: pointer;
+    }
+
+    .headerNavBoton a{ 
+       border-radius:0;
+       color:#000;
+    }
+
+    #icon-menu{
+        display: flex; /*aparece lcono del menu*/
+    }
+
+    .containerAll{
+        /*cuando se Apreta el boton de menu hay una pequeña traslacion en el eje X para que se muestre el menu*/
+        transform:translateX(200px); /*se aplica por medio de un evento en js*/ 
+    }
+    /*main*/
+    main{
+        min-height: 60vh;
+    }
+    
+    .sectionTitulo{
+    justify-content: center;
+    }
+
+    .mainSection{
+        flex-direction: column;
+        background-color: #f1f1f1;
+    }
+    
+    .articleMain{
+        flex-direction: row;
+        height: 126px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .articleMain a{
+        text-align: left;
+    }
+
+    #discosSeccion .articleMain{
+        flex-direction: row;
+        height: 126px;
+        width: 100%;
+    }
+    
+    .mainSections .title{
+        overflow: hidden;
+        /*no se cambia el tamaño de letra de un album*/       
+    }
+
+    /*footer*/
+    footer{
+        max-width: 420px;
+    }
+
+    .footerImgLogo{
+        border-radius: 100%;
+        margin-right: 90px;
+
+    }
+
+    .footerSeccionNav{
+        flex-direction: column;
+    }
+    .footerLi{
+        padding: 5px;
+    }
+}
+
 /*Modo Oscuro*/

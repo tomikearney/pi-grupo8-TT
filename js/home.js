@@ -120,3 +120,7 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
          }
      })
 
+
+     //Le agregamos un evento al icono de menu de Home
+
+     let botonMenu= document.querySelector("")

@@ -60,7 +60,6 @@ fetch(url)
 
     .then(function(data) {
       console.log(data);
-
       //Si no hay resultados de búsqueda
       if (data.data.length == 0) {
         titleArticleCanciones.innerText=  `No hay resultados de canciones para tu busqueda `

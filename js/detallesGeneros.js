@@ -28,15 +28,17 @@ fetch(urlArtistasForAGenre) // esta url nos da todos los artistas pertenecientes
   
   .then(function (data) {
     // console.log(data);
-    let liForGeneros  = document.querySelector(".liForGeneros")
+    let listaForGeneros  = document.querySelector(".listaForGeneros")
 
     for (let i = 0; i < data.data.length; i++) {
-      liForGeneros.innerHTML +=` <li>
+      listaForGeneros.innerHTML += `<li>
                                     <a href="detallesArtista.html?id=${data.data[i].id}">
-                                    <h2 class='raleway'>${data.data[i].name}</h2>
                                     <img class='invisible-border' src="${data.data[i].picture_medium}" alt="${data.data[i].name}">
+                                    <h2 class='nameSinger'>${data.data[i].name}</h2>
                                     </a>
                                 </li>`
+                                    
+  
     }
   
   })
@@ -44,4 +46,5 @@ fetch(urlArtistasForAGenre) // esta url nos da todos los artistas pertenecientes
     console.log(`Error:${error}`);
   }); 
  
+
 
