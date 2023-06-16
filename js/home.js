@@ -1,28 +1,68 @@
 /*
 
-//Funcionalidad modo oscuro
-let footer = document.querySelector(".footer");
-let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
-let headerSeccionNav = document.querySelector(".headerSeccionNav");
-let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
-let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+//FUNCIONALIDAD MODO OSCURO
 
-footer.style.backgroundColor = "black"
-headerSeccionPrimeraParte.style.backgroundColor = "black"
-headerSeccionNav.style.backgroundColor = "black"
+function modoOscuro(){
+     
+     let footer = document.querySelector(".footer");
+     let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
+     let frasesPage = document.querySelector(".frasesPage");
+     let body = document.querySelector("body");
 
-for (let i = 0; i < headerNavBotonArray.length; i++) {
-     headerNavBotonArray[i].style.backgroundColor = "grey"
+     let h2Node = document.querySelectorAll("h2")
+     let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
+     let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
+     let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+
+
+     footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
+     headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
+     body.style.backgroundColor = "#191919fa"
+
+     frasesPage.style.color = "white"
+
+
+     for (let i = 0; i < headerNavBotonArray.length; i++) {
+          headerNavBotonArray[i].style.backgroundColor = "dimgrey"
+     }
+
+     for (let i = 0; i < h2Array.length; i++) {
+          h2Array[i].style.color = "white"
+     }
+
 }
 
-let todo = document.querySelector("*"); //tipo de dato no iterable
-todo.style.cssText = 'color:white !important';
+let articleModoOscuro = document.querySelector(".articleModoOscuro");
+articleModoOscuro.addEventListener("click", function() {
+     let modo = localStorage.getItem("modo");
+     
+     if(modo == null || modo == "Modo claro"){ //Si el modo está en claro
+          articleModoOscuro.innerText = "Modo claro"
+          localStorage.setItem("modo", "modo oscuro")
+          modoOscuro()
+
+     }
+     else { //Si el modo está oscuro
+          articleModoOscuro.innerText = "Modo oscuro"
+          localStorage.setItem("modo", "Modo claro")
+     }
+
+
+     
+
+});
+
+
+
 
 */
 
 
 
-//a
+
+
+
+//Trayendo datos de api
 let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
 let endpoint ="https://api.deezer.com/chart"; /*Es la ruta que proporciona la informacion a renderizar*/
 
@@ -123,4 +163,5 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
 
      //Le agregamos un evento al icono de menu de Home
 
-     let botonMenu= document.querySelector("")
+     //let botonMenu= document.querySelector("")
+
