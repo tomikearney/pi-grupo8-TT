@@ -33,17 +33,29 @@
         </section>
 
         <section class="headerSeccionNav">
+            
+            <section id =icon-menu> <!--con js le damos el evento-->
+                <i class="fa-solid fa-bars"></i>
+            </section>
+            
+            <section class="menu" id="showMenu">
+
+        
                 <nav>
                     <ul class="headerNavUl">
                         <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
                         <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
                         <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
-                        
                     </ul>
+                    
                 </nav>
+            </section>   
         </section>
     </header>
+
     <!------------------------------------MAIN------------------------------->
+    <section class="containerAll" id="moveContent">
+
     <main>
         <section id="detallesSongs" class="sectionDetallesCancion">
             <article class="articleDetallesSongs">
@@ -93,6 +105,7 @@
         </article>
         
     </footer>
+</section>
     <!--Vincular con el javascript correspondiente-->
     <script type="text/javascript" src="./js/detallesCancion.js"></script>
 </body>

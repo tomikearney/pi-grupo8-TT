@@ -34,18 +34,29 @@
         </section>
 
         <section class="headerSeccionNav">
+            
+            <section id =icon-menu> <!--con js le damos el evento-->
+                <i class="fa-solid fa-bars"></i>
+            </section>
+            
+            <section class="menu" id="showMenu">
+
+        
                 <nav>
                     <ul class="headerNavUl">
                         <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
                         <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
                         <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
-
                     </ul>
+                    
                 </nav>
+            </section>   
         </section>
     </header>
 
 <!-----------------------------Body------------------------------->
+<section class="containerAll" id="moveContent">
+
 <main>
    <section class="sectionPlaylist">
         <p class="TituloPagePlaylist"> Tu Playlist</p>
@@ -67,6 +78,7 @@
     </article>
     
 </footer>
+</section>
     <!--Vincular con el javascript correspondiente-->
     <script  type="text/javascript"  src="./js/playlist.js"></script>
 </body>

@@ -21,10 +21,10 @@
                 <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
             </article>
 
-            <!--FOTO DE MODO OSCURO-->
-            <!------------------------->
+     <!--FOTO DE MODO OSCURO-->    
+     <!------------------------->   
             <article class="headerArticleForm">
-                <form action="./searchResults.html" method="get" id="buscadorForm">
+                <form action="./searchResults.html" method="get" id="buscadorForm" >
                     <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
                     <button id="botonBusqueda" type="submit"><i
                             class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
@@ -34,22 +34,29 @@
         </section>
 
         <section class="headerSeccionNav">
-            <nav>
-                <ul class="headerNavUl">
-                    <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
-                   
-                    <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
-                    <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+            
+            <section id =icon-menu> <!--con js le damos el evento-->
+                <i class="fa-solid fa-bars"></i>
+            </section>
+            
+            <section class="menu" id="showMenu">
 
-
-                </ul>
-            </nav>
+        
+                <nav>
+                    <ul class="headerNavUl">
+                        <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                        <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                        <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                    </ul>
+                    
+                </nav>
+            </section>   
         </section>
     </header>
 
 
     <!-----------------------------Body------------------------------->
-
+    <section class="containerAll" id="moveContent">
     <main >
         <section class="contenedorDetallesArtistas">
             <article class="articleDetallesArtistas"> 
@@ -80,6 +87,8 @@
         </article>
 
     </footer>
+
+    </section>
     <!--Vincular con el javascript correspondiente-->
     <script type="text/javascript" src="./js/detallesArtista.js"></script>
 </body>
