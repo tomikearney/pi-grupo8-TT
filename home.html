@@ -19,40 +19,41 @@
 <body>
     <!-------------------------------------Header--------------------------------------->
     <header class="header">
-        <section class="headerSeccionPrimeraParte">
+        <nav>
 
-            <article class="headerArticleLogo">
-                <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
-            </article>
+            <section class="headerSeccionPrimeraParte">
 
-     <!--FOTO DE MODO OSCURO-->    
-     <!------------------------->   
-            <article class="headerArticleForm">
-                <form action="./searchResults.html" method="get" id="buscadorForm" >
-                    <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
-                    <button id="botonBusqueda" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
-                </form>
-            </article>
+                <article class="headerArticleLogo">
+                    <img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo">
+                </article>
 
-        </section>
+                
+                
+                <ul class="headerNavUl">
+                    <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                    <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                    <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                </ul>
+                
+                <!--FOTO DE MODO OSCURO-->    
+                <!------------------------->   
+                <article class="headerArticleForm">
+                    <form action="./searchResults.html" method="get" id="buscadorForm">
+                        <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
+                        <button id="botonBusqueda" type="submit"><i
+                                class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                    </form>
+                </article>
+                
+                <section id =icon-menu> <!--con js le damos el evento-->
+                    <i class="fa-solid fa-bars"></i>
+                </section>
 
-        <section class="headerSeccionNav">
-            
-            <section id =icon-menu> <!--con js le damos el evento-->
-                <i class="fa-solid fa-bars"></i>
+
+
             </section>
-            
-                <nav>
-                    <ul class="headerNavUl">
-                        <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
-                        <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
-                        <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
-                    </ul>
-                    
-                </nav>
-               
-        </section>
+
+        </nav>
     </header>
 
     <!-----------------------------MAIN------------------------------->
