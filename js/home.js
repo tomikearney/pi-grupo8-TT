@@ -1,3 +1,68 @@
+/*
+
+//FUNCIONALIDAD MODO OSCURO
+
+function modoOscuro(){
+     
+     let footer = document.querySelector(".footer");
+     let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
+     let frasesPage = document.querySelector(".frasesPage");
+     let body = document.querySelector("body");
+
+     let h2Node = document.querySelectorAll("h2")
+     let h2Array = Array.from(h2Node) //lo transformo en array para poder iterar
+     let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
+     let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+
+
+     footer.style.backgroundColor = "rgb(0 0 0 / 34%)"
+     headerSeccionPrimeraParte.style.backgroundColor = "rgb(0 0 0 / 34%)"
+     body.style.backgroundColor = "#191919fa"
+
+     frasesPage.style.color = "white"
+
+
+     for (let i = 0; i < headerNavBotonArray.length; i++) {
+          headerNavBotonArray[i].style.backgroundColor = "dimgrey"
+     }
+
+     for (let i = 0; i < h2Array.length; i++) {
+          h2Array[i].style.color = "white"
+     }
+
+}
+
+let articleModoOscuro = document.querySelector(".articleModoOscuro");
+articleModoOscuro.addEventListener("click", function() {
+     let modo = localStorage.getItem("modo");
+     
+     if(modo == null || modo == "Modo claro"){ //Si el modo está en claro
+          articleModoOscuro.innerText = "Modo claro"
+          localStorage.setItem("modo", "modo oscuro")
+          modoOscuro()
+
+     }
+     else { //Si el modo está oscuro
+          articleModoOscuro.innerText = "Modo oscuro"
+          localStorage.setItem("modo", "Modo claro")
+     }
+
+
+     
+
+});
+
+
+
+
+*/
+
+
+
+
+
+
+//Trayendo datos de api
 let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
 let endpoint ="https://api.deezer.com/chart"; /*Es la ruta que proporciona la informacion a renderizar*/
 
@@ -29,39 +94,47 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
 
           //bucle para la seccion de Canciones
           for (let i = 0; i < 5; i++) {
-               seccionCanciones.innerHTML += ` <article class="articleMain">
-                                                  <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
-                                                  <h3 class="title">${canciones[i].title}</h3>
-                                                  <p class="name">${canciones[i].artist.name}</p>
-                                                  <a  href="./detallesCancion.html?id=${canciones[i].id}">
-                                                  <button type="" class="verMas">Ver más</button>
+               seccionCanciones.innerHTML += 
+                                             `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesCancion.html?id=${canciones[i].id}"><h3>${canciones[i].title}</h3></a>
+                                                       <h6>${canciones[i].artist.name}</h6>
+
+                                                  </div>
+                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                       <img src="${canciones[i].album.cover_medium}" width="400" height="600" alt="">
                                                   </a>
-                                             </article>`
+                                             </li>`
           } 
 
           //Bucle para la seccion de Artistas
           for (let i = 0; i < 5; i++) {
-               seccionArtistas.innerHTML += `<article class="articleMain">
-                                                  <img class="articleImg" src="${artists[i].picture_medium}" alt="">
-                                                  <h3 class="name">${artists[i].name}</h3>
+               seccionArtistas.innerHTML += `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h3>${artists[i].name}</h3></a>
+                                                  </div>
                                                   <a href="./detallesArtista.html?id=${artists[i].id}">
-                                                  <button type="" class="verMas">Ver más</button>
+                                                       <img src="${artists[i].picture_medium}" width="400" height="600" alt="">
                                                   </a>
-                                             </article>`
+                                             </li>
+                                             `
           } 
-
-
+          
+                                             
           //Bucle para la seccion de Albums
           
           for (let i = 0; i < 5; i++) {
-               seccionAlbums.innerHTML += `<article class="articleMain">
-                                             <img class="articleImg" src="${albums[i].cover_medium}" alt="">
-                                             <h3 class="title">${albums[i].title}</h3>
-                                             <p class="name">${albums[i].artist.name}</p>
-                                             <a  href="./detallesDisco.html?id=${albums[i].id}">
-                                             <button type="" class="verMas">Ver más</button>
-                                             </a>
-                                        </article>`
+               seccionAlbums.innerHTML += 
+                                             `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesDisco.html?id=${albums[i].id}"><h3>${canciones[i].title}</h3></a>
+                                                       <h6>${albums[i].artist.name}</h6>
+
+                                                  </div>
+                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                       <img src="${albums[i].cover_medium}" width="400" height="600" alt="">
+                                                  </a>
+                                             </li>`
           } 
      })
      /*Atrapara los errores en cualquier de las instancias del fetch */
@@ -103,4 +176,6 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
           let menuAparecer = document.querySelector("#showMenu")
                menuAparecer.classList.toggle("showLateral")
      }); 
+
+     //let botonMenu= document.querySelector("")
 

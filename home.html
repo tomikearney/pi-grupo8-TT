@@ -10,38 +10,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <!--Link hoja CSS-->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/css/uikit.min.css" />
+
 </head>
 
 <body>
     <!-------------------------------------Header--------------------------------------->
     <header class="header">
-        <section class="headerSeccionPrimeraParte">
+        <nav>
+
+            <section class="headerSeccionPrimeraParte">
 
             <article class="headerArticleLogo">
                 <a href="./home.html"><img src="./img/LogoModoClaro.png" alt="logo" class="headerImgLogo"></a>
             </article>
 
-     <!--FOTO DE MODO OSCURO-->    
-     <!------------------------->   
-            <article class="headerArticleForm">
-                <form action="./searchResults.html" method="get" id="buscadorForm" >
-                    <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
-                    <button id="botonBusqueda" type="submit"><i
-                            class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
-                </form>
-            </article>
+                <!-- Es para la funcionalidad del modo oscuro
+                <article class="articleModoOscuro">
+                    <span>Modo oscuro</span>
+                </article>
+                -->
+                
+                
+                <ul class="headerNavUl">
+                    <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
+                    <li class="headerNavBoton"> <a href="./playlist.html">Playlist</a></li>
+                    <li class="headerNavBoton"> <a href="./generos.html">Generos</a></li>
+                </ul>
+                
+                <!--FOTO DE MODO OSCURO-->    
+                <!------------------------->   
+                <article class="headerArticleForm">
+                    <form action="./searchResults.html" method="get" id="buscadorForm">
+                        <input type="search" id="searchInput" name="busqueda" placeholder="Buscar...">
+                        <button id="botonBusqueda" type="submit"><i
+                                class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                    </form>
+                </article>
+                
+                <article id =icon-menu> <!--con js le damos el evento-->
+                    <i class="fa-solid fa-bars">hhh</i>
 
-        </section>
-
-        <section class="headerSeccionNav">
-            
-            <section id =icon-menu> <!--con js le damos el evento-->
-                <i class="fa-solid fa-bars"></i>
-            </section>
-            
-            <section class="menu" id="showMenu">
+                </article>
 
         
+            </section>
+            
                 <nav>
                     <ul class="headerNavUl">
                         <li class="headerNavBoton"> <a href="./home.html">Home</a></li>
@@ -50,7 +66,7 @@
                     </ul>
                     
                 </nav>
-            </section>   
+               
         </section>
     </header>
 
@@ -60,21 +76,38 @@
         <main>
             <h1 class="frasesPage">¡Vive tus dias al compas de buena música!</h1>
 
-            <!---SECCION CANCION-->
-            <section class="sectionTitulo">
-                <h2 class="titleArticle">Canciones</h2>
-            </section>
+        <!---SECCION CANCION-->
+        <section class="sectionTitulo">
+            <h2 class="titleArticle">Canciones</h2>
             
-            <section id = "cancionesSeccion" class="mainSection"> 
-            </section><!--Se les dio un id a cada uno para luego porder asignarles a cada uno su contenido en el js y un class igual para brindarles un diseño igual-->
+        </section>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
 
-            <!--Artistas-->
-            <section class="sectionTitulo">
-                <h2 class="titleArticle">Artistas</h2>
-            </section>
+            <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m" id = "cancionesSeccion">
+                <!--Insertar codigo de js-->
+            </ul>
+        
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        
+        </div>
+        
+ 
+        <!--Artistas-->
+        <section class="sectionTitulo">
+            <h2 class="titleArticle">Artistas</h2>
+        </section>
 
-            <section id= "artistasSeccion" class="mainSection">
-            </section> 
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+            <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m" id= "artistasSeccion">
+                <!--Insertar codigo de js-->
+            </ul>
+        
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+
 
             <!--SECCION ALBUMES/DISCOS-->
             <section class="sectionTitulo">
@@ -97,9 +130,13 @@
             
         </footer>
     </section>
-
+    
     <!--Vincular con el javascript correspondiente-->
     <script type="text/javascript" src="./js/home.js"></script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/js/uikit-icons.min.js"></script>
 </body>
 
 </html>
