@@ -69,16 +69,19 @@ fetch(url)
       //Si hay resultados, recorro el array
       else {   
         for (let i = 0; i < 5; i++){
-              tracks = data.data
-              if (tracks[i] != null) { //Si hay más tracks que recorrer
-                cancionesbusqueda.innerHTML += ` <article class="articleMain">
-                                                      <img class="articleImg" src="${tracks[i].album.cover_medium}" alt=""> 
-                                                      <h3 class="title">${tracks[i].title}</h3>
-                                                      <p class="name">${tracks[i].artist.name}</p>
-                                                      <a  href="./detallesCancion.html?id=${tracks[i].id}">
-                                                      <button type="" class="verMas">Ver más</button>
-                                                      </a>
-                                                </article>`
+              canciones = data.data
+              if (canciones[i] != null) { //Si hay más tracks que recorrer
+                cancionesbusqueda.innerHTML += 
+                                              `<li>
+                                                <div class="uk-position-center uk-panel">
+                                                    <a href="./detallesCancion.html?id=${canciones[i].id}"><h3 class="titulages">${canciones[i].title}</h3></a>
+                                                    <a href="./detallesArtista.html?id=${canciones[i].artist.id}"><h6 class="nameArtista">${canciones[i].artist.name}</h6></a>
+
+                                                </div>
+                                                <a href="./detallesCancion.html?id=${canciones[i].id}">
+                                                    <img src="${canciones[i].album.cover_medium}" width="400" height="600" alt="">
+                                                </a>
+                                              </li>`
               }
               
 
@@ -116,12 +119,17 @@ fetch(urlArtist)
         for (let i = 0; i < 5; i++){
              let artists = data.data;;
              if (artists[i] != null) { 
-              artistasSeccion.innerHTML += `<article class="articleMain">
-                                                <img class="articleImg" src="${artists[i].picture_medium}" alt="">
-                                                <h3 class="name">${artists[i].name}</h3>
-                                                <a href="./detallesArtista.html?id=${artists[i].id}">
-                                                <button type="" class="verMas">Ver más</button> </a>
-                                           </article>`
+              artistasSeccion.innerHTML += 
+                                           `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h3 class="nameArtista">${artists[i].name}</h3></a>
+                                                  </div>
+                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                       <img src="${artists[i].picture_medium}" width="400" height="600" alt="">
+                                                  </a>
+                                             </li>
+                                             `
+                                           
              }
         }
    
@@ -159,14 +167,16 @@ fetch(urlDiscos)
      for (let i = 0; i < 5; i++){
           let albums = data.data
           if (albums[i] != null) {
-            discosSeccion.innerHTML += `<article class="articleMain">
-                                      <img class="articleImg" src="${albums[i].cover_medium}" alt="">
-                                      <h3 class="title">${albums[i].title}</h3>
-                                      <p class="name">${albums[i].artist.name}</p>
-                                      <a href="./detallesDisco.html">
-                                      <button type="" class="verMas">Ver más</button>
-                                      </a>
-                                      </article>`
+            discosSeccion.innerHTML += `<li>
+                                              <div class="uk-position-center uk-panel">
+                                                  <a href="./detallesDisco.html?id=${albums[i].id}"><h3 class="titulages">${albums[i].title}</h3></a>
+                                                  <a href="./detallesArtista.html?id=${albums[i].artist.id}"><h6 class="nameArtista">${albums[i].artist.name}</h6></a>
+
+                                              </div>
+                                              <a href="./detallesDisco.html?id=${albums[i].id}">
+                                                  <img src="${albums[i].cover_medium}" width="400" height="600" alt="">
+                                              </a>
+                                        </li>`
           }
           
      }

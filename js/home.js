@@ -132,10 +132,10 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                                              `<li>
                                                   <div class="uk-position-center uk-panel">
                                                        <a href="./detallesCancion.html?id=${canciones[i].id}"><h3 class="titulages">${canciones[i].title}</h3></a>
-                                                       <h6 class="nameArtista">${canciones[i].artist.name}</h6>
+                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h6 class="nameArtista">${canciones[i].artist.name}</h6></a>
 
                                                   </div>
-                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                  <a href="./detallesCancion.html?id=${canciones[i].id}">
                                                        <img src="${canciones[i].album.cover_medium}" width="400" height="600" alt="">
                                                   </a>
                                              </li>`
@@ -162,10 +162,10 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
                                              `<li>
                                                   <div class="uk-position-center uk-panel">
                                                        <a href="./detallesDisco.html?id=${albums[i].id}"><h3 class="titulages">${canciones[i].title}</h3></a>
-                                                       <h6 class="nameArtista">${albums[i].artist.name}</h6>
+                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h6 class="nameArtista">${albums[i].artist.name}</h6></a>
 
                                                   </div>
-                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                  <a href="./detallesDisco.html?id=${albums[i].id}">
                                                        <img src="${albums[i].cover_medium}" width="400" height="600" alt="">
                                                   </a>
                                              </li>`
