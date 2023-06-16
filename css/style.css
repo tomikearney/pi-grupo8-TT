@@ -174,7 +174,6 @@ main{
     min-height: 60vh;
 }
 .sectionTitulo{
-    background-color:rgba(0, 61, 123, 0.401);
     margin: 5px 10px;
     display: flex;
     justify-content: start;
@@ -197,7 +196,10 @@ main{
     text-align: center;
 }
 
+
+
 /*Para acomodar unicamente la seccion del disco*/
+/*--------------
 #discosSeccion .mainSection{
     height: 281px;
     display: flex;
@@ -218,6 +220,8 @@ main{
     height: 88px;
     width: 95px;
 }
+----------------*/
+
 /*------------------------------*/
 
 .articleMain{
@@ -269,6 +273,12 @@ main{
 } 
   
 /*seccion canciones*/
+h6{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
 
 .verMas{
     font-size: 16px;

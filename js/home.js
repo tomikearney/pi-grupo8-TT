@@ -1,3 +1,28 @@
+/*
+
+//Funcionalidad modo oscuro
+let footer = document.querySelector(".footer");
+let headerSeccionPrimeraParte = document.querySelector(".headerSeccionPrimeraParte");
+let headerSeccionNav = document.querySelector(".headerSeccionNav");
+let headerNavBotonNode = document.querySelectorAll(".headerNavBoton"); //tipo de dato no iterable
+let headerNavBotonArray = Array.from(headerNavBotonNode) //lo transformo en array para poder iterar
+
+footer.style.backgroundColor = "black"
+headerSeccionPrimeraParte.style.backgroundColor = "black"
+headerSeccionNav.style.backgroundColor = "black"
+
+for (let i = 0; i < headerNavBotonArray.length; i++) {
+     headerNavBotonArray[i].style.backgroundColor = "grey"
+}
+
+let todo = document.querySelector("*"); //tipo de dato no iterable
+todo.style.cssText = 'color:white !important';
+
+*/
+
+
+
+//a
 let proxi = "https://cors-anywhere.herokuapp.com/"; /*Te intercambia por otra la direccion, es un intermediario   */
 let endpoint ="https://api.deezer.com/chart"; /*Es la ruta que proporciona la informacion a renderizar*/
 
@@ -29,39 +54,47 @@ fetch(url) /*esta recibe un parametro que es la ruta desde donde obtenemos la in
 
           //bucle para la seccion de Canciones
           for (let i = 0; i < 5; i++) {
-               seccionCanciones.innerHTML += ` <article class="articleMain">
-                                                  <img class="articleImg" src="${canciones[i].album.cover_medium}" alt=""> 
-                                                  <h3 class="title">${canciones[i].title}</h3>
-                                                  <p class="name">${canciones[i].artist.name}</p>
-                                                  <a  href="./detallesCancion.html?id=${canciones[i].id}">
-                                                  <button type="" class="verMas">Ver más</button>
+               seccionCanciones.innerHTML += 
+                                             `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesCancion.html?id=${canciones[i].id}"><h3>${canciones[i].title}</h3></a>
+                                                       <h6>${canciones[i].artist.name}</h6>
+
+                                                  </div>
+                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                       <img src="${canciones[i].album.cover_medium}" width="400" height="600" alt="">
                                                   </a>
-                                             </article>`
+                                             </li>`
           } 
 
           //Bucle para la seccion de Artistas
           for (let i = 0; i < 5; i++) {
-               seccionArtistas.innerHTML += `<article class="articleMain">
-                                                  <img class="articleImg" src="${artists[i].picture_medium}" alt="">
-                                                  <h3 class="name">${artists[i].name}</h3>
+               seccionArtistas.innerHTML += `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesArtista.html?id=${artists[i].id}"><h3>${artists[i].name}</h3></a>
+                                                  </div>
                                                   <a href="./detallesArtista.html?id=${artists[i].id}">
-                                                  <button type="" class="verMas">Ver más</button>
+                                                       <img src="${artists[i].picture_medium}" width="400" height="600" alt="">
                                                   </a>
-                                             </article>`
+                                             </li>
+                                             `
           } 
-
-
+          
+                                             
           //Bucle para la seccion de Albums
           
           for (let i = 0; i < 5; i++) {
-               seccionAlbums.innerHTML += `<article class="articleMain">
-                                             <img class="articleImg" src="${albums[i].cover_medium}" alt="">
-                                             <h3 class="title">${albums[i].title}</h3>
-                                             <p class="name">${albums[i].artist.name}</p>
-                                             <a  href="./detallesDisco.html?id=${albums[i].id}">
-                                             <button type="" class="verMas">Ver más</button>
-                                             </a>
-                                        </article>`
+               seccionAlbums.innerHTML += 
+                                             `<li>
+                                                  <div class="uk-position-center uk-panel">
+                                                       <a href="./detallesDisco.html?id=${albums[i].id}"><h3>${canciones[i].title}</h3></a>
+                                                       <h6>${albums[i].artist.name}</h6>
+
+                                                  </div>
+                                                  <a href="./detallesArtista.html?id=${artists[i].id}">
+                                                       <img src="${albums[i].cover_medium}" width="400" height="600" alt="">
+                                                  </a>
+                                             </li>`
           } 
      })
      /*Atrapara los errores en cualquier de las instancias del fetch */
